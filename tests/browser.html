@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant"><meta charset="UTF-8"><title>Browser checks</title>
+<pre id="output">RUNNING</pre><iframe id="app" src="../site/index.html" width="1100" height="900"></iframe>
+<script>
+const frame = document.getElementById('app');
+const output = document.getElementById('output');
+const passed = [];
+let phase = 0;
+function check(condition, message) {
+  if (!condition) throw new Error(message);
+  passed.push(message);
+}
+frame.addEventListener('load', () => {
+  try {
+    const w = frame.contentWindow;
+    const d = w.document;
+    const get = id => d.getElementById(id);
+    const key = 'drone-quiz-1150202-v1';
+    if (phase === 0) {
+      get('start').click();
+      check(!get('exam').hidden && get('question-nav').children.length === 20, 'Start: 20 navigation buttons');
+      check(get('timer').textContent === '30:00', 'Timer starts at 30:00');
+      const state = JSON.parse(w.localStorage.getItem(key));
+      check(new Set(state.ids).size === 20, '20 unique questions');
+      get('options').querySelector('input[value="A"]').click();
+      get('next').click();
+      get('question-nav').children[0].click();
+      check(get('options').querySelector('input[value="A"]').checked, 'Return to question preserves selection');
+      get('options').querySelector('input[value="B"]').click();
+      check(JSON.parse(w.localStorage.getItem(key)).answers[0] === 'B', 'Answer can be changed');
+      check(!get('options').textContent.includes('正確') && !get('options').textContent.includes('✅'), 'No answers revealed during exam');
+      phase = 1;
+      w.location.reload();
+    } else if (phase === 1) {
+      check(get('options').querySelector('input[value="B"]').checked, 'Reload restores answer');
+      get('submit').click();
+      check(get('submit-dialog').open && get('submit-message').textContent.includes('19'), 'Submission warns about 19 unanswered questions');
+      get('cancel-submit').click();
+      check(!get('submit-dialog').open && !get('exam').hidden, 'Cancel returns to active exam');
+      const state = JSON.parse(w.localStorage.getItem(key));
+      for (let i = 0; i < 20; i++) {
+        get('question-nav').children[i].click();
+        const question = w.QUESTION_BANK.find(q => q.id === state.ids[i]);
+        const answer = i < 10 ? question.answer : i < 15 ? question.options.find(o => o.label !== question.answer).label : null;
+        // The first question's earlier answer is replaced above; last 5 stay unanswered.
+        if (answer) get('options').querySelector(`input[value="${answer}"]`).click();
+      }
+      get('submit').click(); get('confirm-submit').click();
+      check(!get('results').hidden && get('exam').hidden, 'Submission switches to one-page results');
+      check(get('score').textContent === '50', '10 correct answers score 50');
+      check(get('result-stats').textContent.includes('答錯 5 題') && get('result-stats').textContent.includes('未作答 5 題'), 'Mixed incorrect and unanswered totals');
+      check(get('review-list').children.length === 20 && d.querySelectorAll('.right-answer').length === 20, 'All 20 questions show correct answers');
+      get('restart').click();
+      check(!get('exam').hidden && get('progress').textContent.includes('0 / 20'), 'Restart clears answers');
+      const started = JSON.parse(w.localStorage.getItem(key));
+      const realNow = w.Date.now;
+      w.Date.now = () => started.deadline + 1000;
+      w.dispatchEvent(new w.Event('pageshow'));
+      check(!get('results').hidden && get('finish-reason').textContent.includes('自動交卷'), 'Deadline automatically submits');
+      check(get('score').textContent === '0' && get('result-stats').textContent.includes('未作答 20 題'), 'Unanswered timeout scores 0');
+      w.Date.now = realNow;
+      get('restart').click();
+      const expired = JSON.parse(w.localStorage.getItem(key));
+      expired.startedAt = realNow() - w.Quiz.DURATION - 1000;
+      expired.deadline = expired.startedAt + w.Quiz.DURATION;
+      w.localStorage.setItem(key, JSON.stringify(expired));
+      phase = 2;
+      w.location.reload();
+    } else {
+      check(!get('results').hidden && get('finish-reason').textContent.includes('自動交卷'), 'Expired persisted exam submits on reopening');
+      w.localStorage.removeItem(key);
+      output.textContent = 'PASS ' + passed.length + ' checks\n' + passed.join('\n');
+    }
+  } catch (error) { output.textContent = 'FAIL: ' + error.stack + '\n' + passed.join('\n'); }
+});
+</script></html>

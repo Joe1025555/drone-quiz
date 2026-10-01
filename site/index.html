@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#155e52">
+  <title>無人機普通操作證｜模擬測驗</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="questions.js"></script>
+  <script defer src="quiz.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div>無人機普通操作證<small>學科模擬測驗</small></div><a class="header-link" href="question-bank.html" target="_blank" rel="noopener">完整題庫 ↗</a></header>
+  <main>
+    <section id="welcome" class="card welcome">
+      <span class="eyebrow">準備好，再起飛</span>
+      <h1>用一場測驗，<br>確認你的準備。</h1>
+      <p class="muted">從 388 題題庫隨機抽題，練習法規、飛行原理、氣象與緊急處置。</p>
+      <div class="facts"><div><strong>20<small> 題</small></strong><span>每次隨機抽題</span></div><div><strong>100<small> 分</small></strong><span>每題 5 分</span></div><div><strong>30<small> 分鐘</small></strong><span>時間到自動交卷</span></div></div>
+      <button id="start" class="primary">開始測驗 →</button>
+      <p class="hint">可以隨時切換題號與修改答案，交卷後查看完整結果。重新整理可繼續本次測驗，倒數不會重置。</p>
+      <p class="source">題庫版本：民國 115/2/2 · 答案依原題庫答案表</p>
+    </section>
+
+    <section id="exam" hidden>
+      <div class="exam-top"><div><span class="eyebrow">模擬測驗</span><h1>專注每一次選擇</h1></div><div id="timer-box" class="timer"><span>剩餘時間</span><strong id="timer" role="timer" aria-label="剩餘時間">30:00</strong></div></div>
+      <div class="card navigator"><div class="nav-caption"><strong>題目導覽</strong><span id="progress"></span></div><nav id="question-nav" aria-label="切換題目"></nav><p class="hint">實心色為已作答，外框為目前題目。</p></div>
+      <section class="card question-card" aria-labelledby="question-text"><div class="question-meta"><span id="question-position" class="eyebrow"></span><span id="chapter" class="chapter"></span></div><h2 id="question-text" tabindex="-1"></h2><fieldset id="options"><legend class="sr-only">選擇答案</legend></fieldset><div class="question-footer"><button id="previous" class="secondary">← 上一題</button><button id="next" class="primary">下一題 →</button></div></section>
+      <div class="submit-row"><p class="hint">確認完成後交卷，未作答的題目以 0 分計算。</p><button id="submit" class="secondary">交卷查看結果</button></div>
+    </section>
+
+    <section id="results" hidden aria-labelledby="result-heading"><div class="card result-summary"><span class="eyebrow">本次測驗結果</span><h1 id="result-heading">測驗完成</h1><div class="score"><strong id="score"></strong><span>/ 100 分</span></div><p id="result-stats"></p><p id="finish-reason" class="muted"></p><button id="restart" class="primary">再抽 20 題 →</button></div><div class="review-heading"><h2>逐題檢視</h2><p class="hint">全部 20 題的作答與正確答案列在下方。</p></div><div id="review-list"></div></section>
+    <p id="storage-notice" class="hint" role="status" hidden>瀏覽器無法儲存進度；本次測驗請保持頁面開啟。</p>
+    <noscript><p class="card">請啟用 JavaScript 後使用測驗。</p></noscript>
+  </main>
+  <footer>普通操作證學科練習 · 每一次練習，都更接近熟練。</footer>
+  <dialog id="submit-dialog"><h2>確認交卷？</h2><p id="submit-message"></p><div class="dialog-actions"><button id="cancel-submit" class="secondary">繼續作答</button><button id="confirm-submit" class="primary">確認交卷</button></div></dialog>
+</body>
+</html>
