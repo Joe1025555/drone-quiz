@@ -15,15 +15,102 @@ function activeSnapshot(state) {
   const { ids, answers, flags, current, mode, chapterScope, startedAt, deadline, finishedAt } = state;
   return JSON.stringify({ ids, answers, flags, current, mode, chapterScope, startedAt, deadline, finishedAt });
 }
-frame.addEventListener('load', () => {
+function rgb(value) {
+  const parts = value.match(/[\d.]+/g).map(Number);
+  return { channels: parts.slice(0, 3), alpha: parts.length > 3 ? parts[3] : 1 };
+}
+function luminance(channels) {
+  const linear = channels.map(channel => {
+    const value = channel / 255;
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return linear[0] * 0.2126 + linear[1] * 0.7152 + linear[2] * 0.0722;
+}
+function background(w, element) {
+  if (!element) return [255, 255, 255];
+  const color = rgb(w.getComputedStyle(element).backgroundColor);
+  if (color.alpha === 1) return color.channels;
+  const parent = background(w, element.parentElement);
+  return color.channels.map((channel, index) => channel * color.alpha + parent[index] * (1 - color.alpha));
+}
+function contrast(w, element) {
+  const base = background(w, element);
+  const color = rgb(w.getComputedStyle(element).color);
+  const ink = color.channels.map((channel, index) => channel * color.alpha + base[index] * (1 - color.alpha));
+  const values = [luminance(base), luminance(ink)].sort((a, b) => b - a);
+  return (values[0] + 0.05) / (values[1] + 0.05);
+}
+async function systemThemeChecks() {
+  // A memory storage mock keeps system preference tests isolated from exam data.
+  const harness = document.createElement('iframe');
+  harness.hidden = true;
+  const endScript = '</scr' + 'ipt>';
+  const source = new URL('../site/theme.js', location.href).href;
+  harness.srcdoc = `<!doctype html><html><head><script>
+    const memory = new Map();
+    Object.defineProperty(window, 'localStorage', { value: {
+      getItem: key => memory.get(key) ?? null,
+      setItem: (key, value) => memory.set(key, String(value)),
+      removeItem: key => memory.delete(key)
+    } });
+    window.testMedia = new EventTarget();
+    window.testMedia.matches = true;
+    window.testMedia.media = '(prefers-color-scheme: dark)';
+    window.matchMedia = () => window.testMedia;
+  ${endScript}<script src="${source}">${endScript}<script>
+    window.initialTheme = document.documentElement.dataset.theme;
+  ${endScript}</head><body><button id="theme-toggle" aria-label="深色模式" aria-pressed="false" hidden>深色模式</button></body></html>`;
+  try {
+    await new Promise(resolve => {
+      harness.addEventListener('load', resolve, { once: true });
+      document.body.append(harness);
+    });
+    const w = harness.contentWindow;
+    const d = w.document;
+    const key = 'drone-quiz-theme';
+    const changeSystem = dark => {
+      w.testMedia.matches = dark;
+      w.testMedia.dispatchEvent(new w.Event('change'));
+    };
+    check(w.initialTheme === 'dark' && d.documentElement.dataset.theme === 'dark' && w.localStorage.getItem(key) === null, 'Theme follows initial system preference synchronously before page content');
+    changeSystem(false);
+    check(d.documentElement.dataset.theme === 'light' && w.localStorage.getItem(key) === null, 'System change to light updates theme without saving manual preference');
+    changeSystem(true);
+    check(d.documentElement.dataset.theme === 'dark', 'System change back to dark updates theme');
+    d.getElementById('theme-toggle').click();
+    check(d.documentElement.dataset.theme === 'light' && w.localStorage.getItem(key) === 'light', 'Manual theme toggle saves explicit preference');
+    changeSystem(false); changeSystem(true);
+    check(d.documentElement.dataset.theme === 'light', 'Manual choice remains unchanged by later system preference changes');
+    w.localStorage.setItem = () => { throw new w.DOMException('Simulated write failure', 'QuotaExceededError'); };
+    d.getElementById('theme-toggle').click();
+    w.dispatchEvent(new w.Event('pageshow'));
+    check(d.documentElement.dataset.theme === 'dark' && w.localStorage.getItem(key) === 'light', 'Unsaved manual theme survives pageshow when storage writes fail');
+  } finally { harness.remove(); }
+}
+frame.addEventListener('load', async () => {
   try {
     const w = frame.contentWindow;
     const d = w.document;
     const get = id => d.getElementById(id);
     const key = 'drone-quiz-1150202-v1';
+    const themeKey = 'drone-quiz-theme';
     if (phase === 0) {
+      await systemThemeChecks();
       frame.style.width = '320px';
       check(d.documentElement.scrollWidth <= 320, 'Welcome layout fits 320px viewport');
+      const savedTheme = w.localStorage.getItem(themeKey);
+      const expectedTheme = ['light', 'dark'].includes(savedTheme) ? savedTheme : w.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      check(d.documentElement.dataset.theme === expectedTheme && !get('theme-toggle').hidden, 'Main page initializes stored or system theme and exposes toggle');
+      if (d.documentElement.dataset.theme === 'dark') get('theme-toggle').click();
+      const lightBackground = luminance(background(w, d.body));
+      get('theme-toggle').click();
+      check(d.documentElement.dataset.theme === 'dark' && get('theme-toggle').getAttribute('aria-pressed') === 'true' && get('theme-toggle').getAttribute('aria-label') === '深色模式' && get('theme-toggle').textContent.trim().endsWith('深色模式') && w.localStorage.getItem(themeKey) === 'dark', 'Dark toggle exposes stable accessible name, pressed state and saved choice');
+      check(luminance(background(w, d.body)) < lightBackground && luminance(background(w, d.body)) < 0.1, 'Dark theme changes actual page background to a dark color');
+      check(['start', 'theme-toggle', 'practice-chapter'].every(id => contrast(w, get(id)) >= 4.5), 'Dark home buttons and chapter select have at least 4.5:1 text contrast');
+      check(d.documentElement.scrollWidth <= 320, 'Dark home fits 320px viewport');
+      get('theme-toggle').click();
+      check(d.documentElement.dataset.theme === 'light' && get('theme-toggle').getAttribute('aria-pressed') === 'false' && w.localStorage.getItem(themeKey) === 'light', 'Toggle returns to light theme and saves light preference');
+      check(['start', 'theme-toggle', 'practice-chapter'].every(id => contrast(w, get(id)) >= 4.5), 'Light home buttons and chapter select have at least 4.5:1 text contrast');
       for (let attempt = 0; attempt < 100; attempt++) {
         const selected = w.Quiz.sample(w.QUESTION_BANK);
         const chapters = Array.from(new Set(w.QUESTION_BANK.map(q => q.chapter)));
@@ -54,6 +141,9 @@ frame.addEventListener('load', () => {
       get('flag-question').click();
       check(get('flag-question').getAttribute('aria-pressed') === 'true' && get('question-nav').children[0].textContent.includes('☆'), 'Flag is visible in question navigation');
       homeSnapshot = activeSnapshot(JSON.parse(w.localStorage.getItem(key)));
+      get('theme-toggle').click();
+      check(d.documentElement.dataset.theme === 'dark' && activeSnapshot(JSON.parse(w.localStorage.getItem(key))) === homeSnapshot, 'Theme switch preserves active questions, answers, flags and deadline');
+      check(contrast(w, get('options').querySelector('.option')) >= 4.5 && contrast(w, get('next')) >= 4.5 && d.documentElement.scrollWidth <= 320, 'Dark exam options and next button remain readable at 320px');
       get('home-button').click();
       check(!get('welcome').hidden && get('exam').hidden && get('results').hidden, 'Header returns active exam to home');
       check(!get('resume-panel').hidden && get('resume-message').textContent.length > 0, 'Home offers saved exam continuation');
@@ -73,6 +163,7 @@ frame.addEventListener('load', () => {
       phase = 5;
       w.location.reload();
     } else if (phase === 5) {
+      check(d.documentElement.dataset.theme === 'dark' && get('theme-toggle').getAttribute('aria-pressed') === 'true' && w.localStorage.getItem(themeKey) === 'dark', 'Reload restores saved dark theme and accessible pressed state');
       check(!get('welcome').hidden && get('exam').hidden && !get('resume-panel').hidden, 'Reload of home restores home and resume panel');
       check(activeSnapshot(JSON.parse(w.localStorage.getItem(key))) === homeSnapshot, 'Home reload retains all active progress and original deadline');
       get('resume-exam').click();
@@ -110,6 +201,7 @@ frame.addEventListener('load', () => {
       check(get('score').textContent === '50', '10 correct answers score 50');
       check(d.documentElement.scrollWidth <= 320, 'Result layout fits 320px viewport');
       check(get('result-stats').textContent.includes('答錯 5 題') && get('result-stats').textContent.includes('未作答 5 題'), 'Mixed incorrect and unanswered totals');
+      check(['.correct', '.incorrect', '.right-answer', '.wrong-answer'].every(selector => contrast(w, d.querySelector(selector)) >= 4.5), 'Dark result correct and incorrect indicators have at least 4.5:1 text contrast');
       check(get('review-list').children.length === 20 && d.querySelectorAll('.right-answer').length === 20, 'All 20 questions show correct answers');
       check(d.querySelectorAll('#review-list .explanation').length === 20 && !d.querySelector('.explanation').open, 'Result explanations available but collapsed');
       const explanation = d.querySelector('.explanation');
@@ -204,6 +296,8 @@ frame.addEventListener('load', () => {
       w.localStorage.removeItem(key); w.localStorage.removeItem('drone-quiz-mistakes-1150202');
       phase = 4; frame.src = '../site/question-bank.html';
     } else {
+      check(d.documentElement.dataset.theme === 'dark' && get('theme-toggle').getAttribute('aria-pressed') === 'true', 'Question bank shares saved dark theme with exam page');
+      check(contrast(w, get('bank-query')) >= 4.5 && contrast(w, get('bank-chapter')) >= 4.5 && d.documentElement.scrollWidth <= 320, 'Dark question bank search controls are readable and fit 320px');
       check(d.querySelectorAll('.bank-question').length === 388, 'Search page retains all 388 Markdown questions');
       check(Object.keys(w.QUESTION_EXPLANATIONS).length === 388 && [...d.querySelectorAll('.bank-question')].every(q => q.querySelector('.explanation-body p')?.textContent.length > 10 && q.querySelector('.explanation-sources a')), 'All 388 questions have explanation text and reference links');
       get('bank-query').value = '電池'; get('bank-query').dispatchEvent(new w.Event('input'));
@@ -218,6 +312,16 @@ frame.addEventListener('load', () => {
       check([...d.querySelectorAll('.bank-question')].every(q => !q.hidden), 'Clear filter restores all questions');
       frame.style.width = '320px';
       check(d.documentElement.scrollWidth <= 320, 'Question bank layout fits 320px viewport');
+      get('theme-toggle').click();
+      check(d.documentElement.dataset.theme === 'light' && get('theme-toggle').getAttribute('aria-pressed') === 'false' && w.localStorage.getItem(themeKey) === 'light' && d.querySelectorAll('.bank-question').length === 388, 'Question bank toggle saves shared light preference while retaining all questions');
+      w.localStorage.setItem(themeKey, 'dark');
+      w.dispatchEvent(new w.StorageEvent('storage', { key: themeKey, newValue: 'dark', storageArea: w.localStorage }));
+      check(d.documentElement.dataset.theme === 'dark' && get('theme-toggle').getAttribute('aria-pressed') === 'true', 'Storage event synchronizes theme and toggle across tabs');
+      w.localStorage.setItem(themeKey, 'light');
+      w.dispatchEvent(new w.Event('pageshow'));
+      check(d.documentElement.dataset.theme === 'light' && get('theme-toggle').getAttribute('aria-pressed') === 'false', 'Returning to page reads current shared theme preference');
+      w.dispatchEvent(new w.StorageEvent('storage', { key, newValue: 'dark', storageArea: w.localStorage }));
+      check(d.documentElement.dataset.theme === 'light', 'Storage events for exam progress do not change theme');
       output.textContent = 'PASS ' + passed.length + ' checks\n' + passed.join('\n');
     }
   } catch (error) { output.textContent = 'FAIL: ' + error.stack + '\n' + passed.join('\n'); }
