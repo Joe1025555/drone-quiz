@@ -117,6 +117,7 @@
     $('review-list').replaceChildren(...result.items.map((item, index) => {
       const card = document.createElement('article');
       card.className = 'card review-card';
+      card.dataset.correct = String(item.isCorrect);
       const header = document.createElement('div'); header.className = 'review-meta';
       const source = document.createElement('span'); source.textContent = `第 ${index + 1} 題 · ${item.question.chapter} · 原題 ${item.question.number}`;
       const badge = document.createElement('strong'); badge.className = 'badge ' + (item.isCorrect ? 'correct' : 'incorrect');
@@ -136,6 +137,20 @@
       card.append(header, title, options, answer);
       return card;
     }));
+    filterReview(false);
+  }
+  function filterReview(wrongOnly) {
+    let visible = 0;
+    for (const card of $('review-list').children) {
+      card.hidden = wrongOnly && card.dataset.correct === 'true';
+      if (!card.hidden) visible++;
+    }
+    $('review-all').setAttribute('aria-pressed', String(!wrongOnly));
+    $('review-wrong').setAttribute('aria-pressed', String(wrongOnly));
+    $('review-description').textContent = wrongOnly
+      ? `顯示 ${visible} 題錯題（含未作答），保留原測驗題號。`
+      : `顯示全部 ${visible} 題的作答與正確答案。`;
+    $('review-empty').hidden = !wrongOnly || visible !== 0;
   }
   function restore() {
     try {
@@ -151,6 +166,8 @@
   }
   $('start').addEventListener('click', start);
   $('restart').addEventListener('click', start);
+  $('review-all').addEventListener('click', () => filterReview(false));
+  $('review-wrong').addEventListener('click', () => filterReview(true));
   $('previous').addEventListener('click', () => navigate(Math.max(0, state.current - 1)));
   $('next').addEventListener('click', () => state.current === 19 ? requestSubmit() : navigate(state.current + 1));
   $('submit').addEventListener('click', requestSubmit);

@@ -71,6 +71,8 @@ fieldset { border: 0; padding: 0; margin: 24px 0 32px; min-width: 0; }
 .review-heading { margin: 32px 0 20px; }
 .review-heading h2 { margin-bottom: 0; }
 .review-heading .hint { margin-top: 2px; }
+.review-filters { display: flex; gap: 10px; margin: 14px 0 10px; }
+.review-filters button[aria-pressed="true"] { background: var(--green); color: white; border-color: var(--green); }
 .review-card { margin-bottom: 16px; padding: 26px; }
 .review-meta { display: flex; justify-content: space-between; gap: 12px; align-items: center; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
 .badge { white-space: nowrap; border-radius: 6px; padding: 4px 10px; }
