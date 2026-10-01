@@ -6,6 +6,7 @@
   const storageKey = 'drone-quiz-1150202-v1';
   let state = null;
   let interval = null;
+  let pendingStart = null;
   const mistakeKey = 'drone-quiz-mistakes-1150202';
   let mistakes = new Set();
   try {
@@ -35,15 +36,58 @@
   function questions() { return state.ids.map(id => bank.find(q => q.id === id)); }
   function showScreen(id) {
     for (const screen of ['welcome', 'exam', 'results']) $(screen).hidden = screen !== id;
+    if (state) { state.screen = id; save(); }
+    if (id === 'welcome') $('home-button').setAttribute('aria-current', 'page');
+    else $('home-button').removeAttribute('aria-current');
+    $('home-button').textContent = id === 'welcome' ? '首頁' : '回首頁';
+    if (id !== 'welcome' && location.hash === '#home') {
+      history.replaceState(null, '', location.href.split('#')[0]);
+    }
+  }
+  function modeLabel() {
+    return state.mode === 'chapter' ? (state.chapterScope === 'all' ? '全章練習' : '章節練習') : state.mode === 'mistakes' ? '錯題重練' : '正式測驗模式';
+  }
+  function updateResumePanel() {
+    $('resume-panel').hidden = !state;
+    if (!state) return;
+    if (state.finishedAt === null) {
+      $('resume-title').textContent = '尚有測驗進行中';
+      const message = `${modeLabel()} · 已作答 ${state.answers.filter(Boolean).length} / ${state.ids.length} 題 · 剩餘 ${Math.ceil(rules.remaining(state.deadline) / 60)} 分鐘。回首頁不會暫停倒數。`;
+      if ($('resume-message').textContent !== message) $('resume-message').textContent = message;
+      $('resume-exam').textContent = '繼續作答 →';
+    } else {
+      $('resume-title').textContent = '上一場測驗已完成';
+      $('resume-message').textContent = `${modeLabel()} · ${state.ids.length} 題 · ${rules.grade(questions(), state.answers).score} / ${state.ids.length * rules.POINTS} 分`;
+      $('resume-exam').textContent = '查看上次結果 →';
+    }
+  }
+  function goHome(focus = true) {
+    // Time still runs while the mode selector is visible.
+    if (state && state.finishedAt === null && Date.now() >= state.deadline) finish('timeout');
+    showScreen('welcome'); updatePracticeControls(); updateResumePanel();
+    window.scrollTo(0, 0);
+    if (focus) $('home-heading').focus({ preventScroll: true });
+  }
+  function requestStart(mode = 'exam') {
+    if (state && state.finishedAt === null) {
+      if (Date.now() >= state.deadline) finish('timeout');
+      else {
+        pendingStart = { mode, chapter: $('practice-chapter').value, size: $('practice-size').value };
+        $('new-exam-dialog').showModal();
+        return;
+      }
+    }
+    start(mode);
   }
   function focusQuestion() { $('question-text').focus({ preventScroll: true }); }
   function start(mode = 'exam') {
     const pool = mode === 'mistakes' ? bank.filter(q => mistakes.has(q.id)) : mode === 'chapter' ? bank.filter(q => q.chapter === $('practice-chapter').value) : bank;
     if (!pool.length) return;
-    const selected = mode === 'exam' ? rules.sample(pool) : rules.practice(pool);
+    const chapterScope = mode === 'chapter' ? $('practice-size').value : null;
+    const selected = mode === 'exam' ? rules.sample(pool) : rules.practice(pool, chapterScope === 'all' ? pool.length : rules.COUNT);
     clearInterval(interval);
     const now = Date.now();
-    state = { ids: selected.map(q => q.id), answers: Array(selected.length).fill(null), flags: Array(selected.length).fill(false), mode, current: 0, startedAt: now, deadline: now + rules.DURATION, finishedAt: null, reason: null };
+    state = { ids: selected.map(q => q.id), answers: Array(selected.length).fill(null), flags: Array(selected.length).fill(false), mode, chapterScope, current: 0, startedAt: now, deadline: now + rules.DURATION, finishedAt: null, reason: null };
     save();
     showScreen('exam');
     $('time-alert').textContent = '';
@@ -56,9 +100,10 @@
   function renderQuestion() {
     const current = state.current;
     const question = questions()[current];
-    $('exam-mode').textContent = state.mode === 'chapter' ? '章節練習' : state.mode === 'mistakes' ? '錯題重練' : '模擬測驗';
+    $('exam-mode').textContent = modeLabel();
     $('answer-progress').max = state.ids.length;
     $('answer-progress').value = state.answers.filter(Boolean).length;
+    document.querySelector('.navigator').classList.toggle('large-exam', state.ids.length > rules.COUNT);
     $('progress').textContent = `已作答 ${state.answers.filter(Boolean).length} / ${state.ids.length} 題`;
     $('question-nav').replaceChildren(...state.ids.map((id, index) => {
       const button = document.createElement('button');
@@ -70,7 +115,11 @@
       button.addEventListener('click', () => navigate(index));
       return button;
     }));
-    $('question-position').textContent = `${state.mode === 'chapter' ? '章節練習' : state.mode === 'mistakes' ? '錯題重練' : '模擬測驗'} · 第 ${current + 1} 題 / ${state.ids.length} · 5 分`;
+    if (state.ids.length > rules.COUNT) {
+      const nav = $('question-nav');
+      nav.scrollTop = nav.children[current].offsetTop - nav.clientHeight / 2;
+    }
+    $('question-position').textContent = `${$('exam-mode').textContent} · 第 ${current + 1} 題 / ${state.ids.length} · 5 分`;
     $('flag-question').setAttribute('aria-pressed', String(state.flags[current]));
     $('flag-question').textContent = state.flags[current] ? '★ 已標記待確認' : '☆ 標記待確認';
     $('next-flagged').disabled = !state.flags.some(Boolean);
@@ -124,6 +173,7 @@
     $('timer-box').classList.toggle('urgent', seconds <= 300);
     if (seconds > 0 && seconds <= 300 && !$('time-alert').textContent) $('time-alert').textContent = '剩餘時間少於 5 分鐘，請檢查未作答與待確認題目。';
     if (seconds === 0) finish('timeout');
+    else if (!$('welcome').hidden) updateResumePanel();
   }
   function requestSubmit() {
     if (!ensureActive()) return;
@@ -137,6 +187,8 @@
     state.reason = reason;
     clearInterval(interval);
     if ($('submit-dialog').open) $('submit-dialog').close();
+    if ($('new-exam-dialog').open) $('new-exam-dialog').close();
+    pendingStart = null;
     recordMistakes(); save(); renderResults();
     window.scrollTo(0, 0);
     $('result-heading').tabIndex = -1;
@@ -158,7 +210,8 @@
     updatePracticeControls();
     $('result-stats').textContent = `答對 ${result.correct} 題 · 答錯 ${result.wrong} 題 · 未作答 ${result.unanswered} 題`;
     const elapsed = Math.floor((state.finishedAt - state.startedAt) / 1000);
-    $('finish-reason').textContent = `${state.reason === 'timeout' ? '時間到，已自動交卷' : '已交卷'} · 用時 ${Math.floor(elapsed / 60)} 分 ${elapsed % 60} 秒`;
+    const mode = modeLabel();
+    $('finish-reason').textContent = `${mode} ${state.ids.length} 題 · ${state.reason === 'timeout' ? '時間到，已自動交卷' : '已交卷'} · 用時 ${Math.floor(elapsed / 60)} 分 ${elapsed % 60} 秒`;
     $('review-list').replaceChildren(...result.items.map((item, index) => {
       const card = document.createElement('article');
       card.className = 'card review-card';
@@ -180,6 +233,7 @@
       const answer = document.createElement('p'); answer.className = 'answer-summary';
       answer.textContent = `你的答案：${item.selected || '未作答'}　／　正確答案：${item.question.answer}`;
       card.append(header, title, options, answer);
+      card.append(window.Explanations.createDetails(item.question.id));
       return card;
     }));
     filterReview(false);
@@ -201,21 +255,63 @@
     try {
       const stored = JSON.parse(localStorage.getItem(storageKey));
       if (!stored) return;
-      const valid = Array.isArray(stored.ids) && stored.ids.length > 0 && stored.ids.length <= 20 && new Set(stored.ids).size === stored.ids.length && stored.ids.every(id => bank.some(q => q.id === id)) && Array.isArray(stored.answers) && stored.answers.length === stored.ids.length && stored.answers.every(a => a === null || /^[A-D]$/.test(a)) && Number.isInteger(stored.current) && stored.current >= 0 && stored.current < stored.ids.length && Number.isFinite(stored.startedAt) && stored.deadline === stored.startedAt + rules.DURATION && (stored.finishedAt === null || (Number.isFinite(stored.finishedAt) && stored.finishedAt >= stored.startedAt && stored.finishedAt <= stored.deadline && ['manual', 'timeout'].includes(stored.reason)));
+      const valid = validSavedState(stored);
       if (!valid) { localStorage.removeItem(storageKey); return; }
       state = stored;
       if (!Array.isArray(state.flags) || state.flags.length !== state.ids.length) state.flags = Array(state.ids.length).fill(false);
-      if (state.finishedAt !== null) { renderResults(); return; }
+      if (state.finishedAt !== null) { if (state.screen === 'welcome' || location.hash === '#home') goHome(false); else renderResults(); return; }
+      const atHome = state.screen === 'welcome' || location.hash === '#home';
       showScreen('exam'); renderQuestion(); tick();
-      if (state.finishedAt === null) interval = setInterval(tick, 1000);
+      if (state.finishedAt === null) {
+        interval = setInterval(tick, 1000);
+        if (atHome) goHome(false);
+      }
     } catch { $('storage-notice').hidden = false; }
   }
-  $('start').addEventListener('click', () => start());
-  $('restart').addEventListener('click', () => start());
-  $('start-chapter').addEventListener('click', () => start('chapter'));
-  $('start-mistakes').addEventListener('click', () => start('mistakes'));
-  $('result-mistakes').addEventListener('click', () => start('mistakes'));
-  $('practice-home').addEventListener('click', () => { showScreen('welcome'); updatePracticeControls(); window.scrollTo(0, 0); $('practice-chapter').focus({ preventScroll: true }); });
+  function validSavedState(stored) {
+    if (!Array.isArray(stored.ids) || stored.ids.length === 0 || new Set(stored.ids).size !== stored.ids.length) return false;
+    const selected = stored.ids.map(id => bank.find(q => q.id === id));
+    if (selected.some(q => !q)) return false;
+    const allChapter = stored.mode === 'chapter' && stored.chapterScope === 'all';
+    if (allChapter) {
+      const chapter = selected[0].chapter;
+      if (selected.some(q => q.chapter !== chapter) || selected.length !== bank.filter(q => q.chapter === chapter).length) return false;
+    } else if (selected.length > rules.COUNT) return false;
+    return Array.isArray(stored.answers) && stored.answers.length === selected.length && stored.answers.every(a => a === null || /^[A-D]$/.test(a)) && Number.isInteger(stored.current) && stored.current >= 0 && stored.current < selected.length && Number.isFinite(stored.startedAt) && stored.deadline === stored.startedAt + rules.DURATION && (stored.finishedAt === null || (Number.isFinite(stored.finishedAt) && stored.finishedAt >= stored.startedAt && stored.finishedAt <= stored.deadline && ['manual', 'timeout'].includes(stored.reason)));
+  }
+  function updateChapterPractice() {
+    const count = bank.filter(q => q.chapter === $('practice-chapter').value).length;
+    $('practice-size').options[1].textContent = `該章全部（${count} 題）`;
+    const chosen = $('practice-size').value === 'all' ? count : Math.min(count, rules.COUNT);
+    $('chapter-practice-info').textContent = `${chosen} 題 · 滿分 ${chosen * rules.POINTS} 分 · 限時 30 分鐘`;
+    $('start-chapter').textContent = $('practice-size').value === 'all' ? `開始全章 ${chosen} 題 →` : '隨機練習 20 題 →';
+  }
+  $('start').addEventListener('click', () => requestStart());
+  $('restart').addEventListener('click', () => requestStart());
+  $('start-chapter').addEventListener('click', () => requestStart('chapter'));
+  $('practice-chapter').addEventListener('change', updateChapterPractice);
+  $('practice-size').addEventListener('change', updateChapterPractice);
+  $('start-mistakes').addEventListener('click', () => requestStart('mistakes'));
+  $('result-mistakes').addEventListener('click', () => requestStart('mistakes'));
+  $('home-button').addEventListener('click', () => goHome());
+  $('practice-home').addEventListener('click', () => goHome());
+  $('resume-exam').addEventListener('click', () => {
+    if (!state) return;
+    if (state.finishedAt !== null) { renderResults(); window.scrollTo(0, 0); $('result-heading').focus({ preventScroll: true }); return; }
+    if (!ensureActive()) return;
+    showScreen('exam'); renderQuestion(); focusQuestion(); window.scrollTo(0, 0);
+  });
+  function cancelNewExam() { pendingStart = null; }
+  $('cancel-new-exam').addEventListener('click', () => { $('new-exam-dialog').close(); cancelNewExam(); });
+  $('new-exam-dialog').addEventListener('cancel', cancelNewExam);
+  $('confirm-new-exam').addEventListener('click', () => {
+    const next = pendingStart;
+    $('new-exam-dialog').close(); pendingStart = null;
+    if (!next) return;
+    if (state && state.finishedAt === null && Date.now() >= state.deadline) finish('timeout');
+    $('practice-chapter').value = next.chapter; $('practice-size').value = next.size; updateChapterPractice();
+    start(next.mode);
+  });
   $('flag-question').addEventListener('click', () => {
     if (!ensureActive()) return;
     state.flags[state.current] = !state.flags[state.current]; save(); renderQuestion();
@@ -239,5 +335,5 @@
     const option = document.createElement('option'); option.value = chapter; option.textContent = chapter;
     $('practice-chapter').append(option);
   }
-  updatePracticeControls(); restore();
+  updateChapterPractice(); updatePracticeControls(); restore();
 })();

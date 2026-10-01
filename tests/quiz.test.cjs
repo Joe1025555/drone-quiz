@@ -65,3 +65,27 @@ test('practice handles small mistake banks and caps large banks at 20', () => {
   assert.equal(quiz.practice(bank).length, 20);
   assert.equal(quiz.practice([]).length, 0);
 });
+test('full chapter practice includes every question exactly once without altering the bank', () => {
+  for (const chapter of new Set(bank.map(q => q.chapter))) {
+    const pool = bank.filter(q => q.chapter === chapter);
+    const before = JSON.stringify(pool);
+    const selected = quiz.practice(pool, pool.length);
+    assert.equal(selected.length, pool.length);
+    assert.equal(new Set(selected.map(q => q.id)).size, pool.length);
+    assert.ok(selected.every(q => q.chapter === chapter));
+    assert.equal(JSON.stringify(pool), before);
+    assert.equal(quiz.grade(selected, selected.map(q => q.answer)).score, pool.length * 5);
+  }
+});
+test('each question has an explanation with HTTPS reference sources', () => {
+  const context = { window: {} };
+  vm.runInNewContext(fs.readFileSync(require.resolve('../site/explanations-data.js'), 'utf8'), context);
+  const explanations = context.window.QUESTION_EXPLANATIONS;
+  assert.equal(Object.keys(explanations).length, bank.length);
+  for (const question of bank) {
+    const explanation = explanations[question.id];
+    assert.ok(typeof explanation.text === 'string' && explanation.text.length > 10);
+    assert.ok(explanation.sources.length > 0);
+    assert.ok(explanation.sources.every(source => source.title && source.url.startsWith('https://')));
+  }
+});

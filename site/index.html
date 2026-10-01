@@ -4,24 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#155e52">
-  <title>無人機普通操作證｜模擬測驗</title>
+  <title>無人機普通操作證｜測驗與練習</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="questions.js"></script>
+  <script defer src="explanations-data.js"></script>
+  <script defer src="explanations.js"></script>
   <script defer src="quiz.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳至主要內容</a>
-  <header class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div>無人機普通操作證<small>學科模擬測驗</small></div><a class="header-link" href="question-bank.html" target="_blank" rel="noopener">完整題庫 ↗</a></header>
+  <header class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div>無人機普通操作證<small>測驗與練習</small></div><nav class="brand-nav" aria-label="主要導覽"><button id="home-button" class="secondary" aria-current="page">首頁</button><a class="header-link" href="question-bank.html" target="_blank" rel="noopener">完整題庫 ↗</a></nav></header>
   <main id="main-content" tabindex="-1">
     <section id="welcome" class="card welcome">
-      <span class="eyebrow">準備好，再起飛</span>
-      <h1>用一場測驗，<br>確認你的準備。</h1>
+      <span class="eyebrow">測驗首頁</span>
+      <h1 id="home-heading" tabindex="-1">選擇你的練習方式</h1>
+      <div id="resume-panel" class="resume-panel" hidden><div><strong id="resume-title">尚有測驗進行中</strong><p id="resume-message" class="hint" role="status"></p></div><button id="resume-exam" class="secondary">繼續作答 →</button></div>
       <p class="muted">從 388 題題庫按章節比例抽題：法規 5 題、飛行原理 9 題、氣象 4 題、緊急處置 2 題，出題順序隨機打散。</p>
       <div class="facts"><div><strong>20<small> 題</small></strong><span>每次隨機抽題</span></div><div><strong>100<small> 分</small></strong><span>每題 5 分</span></div><div><strong>30<small> 分鐘</small></strong><span>時間到自動交卷</span></div></div>
-      <div class="mode-primary"><div><h2>模擬測驗</h2><p>四章按比例抽題，練習完整考試流程。</p></div><button id="start" class="primary">開始測驗 →</button></div>
-      <div class="practice-controls"><div class="mode-heading"><span class="eyebrow">針對弱點，加強練習</span><h2>選擇練習方式</h2><p class="hint">每次最多 20 題 · 每題 5 分 · 限時 30 分鐘</p></div><div class="practice-grid"><div class="practice-panel"><label for="practice-chapter">章節練習</label><p class="hint">集中練習一個章節。</p><select id="practice-chapter"></select><button id="start-chapter" class="secondary">練習此章 →</button></div><div class="practice-panel"><h3>錯題重練</h3><p id="mistake-count" class="hint"></p><button id="start-mistakes" class="secondary" disabled>尚無錯題</button></div></div></div>
-      <p class="hint">可以隨時切換題號與修改答案，交卷後查看完整結果。重新整理可繼續本次測驗，倒數不會重置。</p>
+      <div class="mode-primary"><div><h2>正式測驗模式</h2><p>四章按比例抽 20 題，限時 30 分鐘，交卷後查看成績。</p></div><button id="start" class="primary">開始正式測驗 →</button></div>
+      <div class="practice-controls"><div class="mode-heading"><span class="eyebrow">針對弱點，加強練習</span><h2>選擇練習方式</h2><p class="hint">每題 5 分 · 限時 30 分鐘；章節練習可選全章。</p></div><div class="practice-grid"><div class="practice-panel"><label for="practice-chapter">章節練習</label><p class="hint">集中練習一個章節。</p><select id="practice-chapter"></select><label for="practice-size">練習題數</label><select id="practice-size"><option value="20">隨機 20 題</option><option value="all">該章全部</option></select><p id="chapter-practice-info" class="hint"></p><button id="start-chapter" class="secondary">練習此章 →</button></div><div class="practice-panel"><h3>錯題重練</h3><p id="mistake-count" class="hint"></p><button id="start-mistakes" class="secondary" disabled>尚無錯題</button></div></div></div>
+      <p class="hint">作答中可回首頁選擇模式，原進度會保留，倒數持續計時。這是題庫模擬練習網站。</p>
       <p class="source">題庫版本：民國 115/2/2 · 答案依原題庫答案表</p>
     </section>
 
@@ -34,11 +37,12 @@
       <div class="submit-row"><p class="hint">確認完成後交卷，未作答的題目以 0 分計算。</p><button id="submit" class="secondary">交卷查看結果</button></div>
     </section>
 
-    <section id="results" hidden aria-labelledby="result-heading"><div class="card result-summary"><span class="eyebrow">本次測驗結果</span><h1 id="result-heading">測驗完成</h1><div class="score"><strong id="score"></strong><span>/ 100 分</span></div><p id="result-stats"></p><p id="finish-reason" class="muted"></p><button id="restart" class="primary">再抽 20 題 →</button></div><div class="card chapter-statistics"><h2>各章正確率</h2><div id="chapter-stats"></div><div class="review-filters"><button id="result-mistakes" class="secondary">錯題重練</button><button id="practice-home" class="secondary">選擇章節練習</button></div></div><div class="review-heading"><h2>逐題檢視</h2><div class="review-filters" role="group" aria-label="篩選檢視題目"><button id="review-all" class="secondary" aria-pressed="true">全部題目</button><button id="review-wrong" class="secondary" aria-pressed="false">只看錯題</button></div><p id="review-description" class="hint" role="status"></p></div><p id="review-empty" class="card" hidden>全部答對，沒有錯題！</p><div id="review-list"></div></section>
+    <section id="results" hidden aria-labelledby="result-heading"><div class="card result-summary"><span class="eyebrow">本次測驗結果</span><h1 id="result-heading" tabindex="-1">測驗完成</h1><div class="score"><strong id="score"></strong><span>/ 100 分</span></div><p id="result-stats"></p><p id="finish-reason" class="muted"></p><button id="restart" class="primary">再抽 20 題 →</button></div><div class="card chapter-statistics"><h2>各章正確率</h2><div id="chapter-stats"></div><div class="review-filters"><button id="result-mistakes" class="secondary">錯題重練</button><button id="practice-home" class="secondary">回首頁選擇模式</button></div></div><div class="review-heading"><h2>逐題檢視</h2><div class="review-filters" role="group" aria-label="篩選檢視題目"><button id="review-all" class="secondary" aria-pressed="true">全部題目</button><button id="review-wrong" class="secondary" aria-pressed="false">只看錯題</button></div><p id="review-description" class="hint" role="status"></p></div><p id="review-empty" class="card" hidden>全部答對，沒有錯題！</p><div id="review-list"></div></section>
     <p id="storage-notice" class="hint" role="status" hidden>瀏覽器無法儲存進度；本次測驗請保持頁面開啟。</p>
     <noscript><p class="card">請啟用 JavaScript 後使用測驗。</p></noscript>
   </main>
   <footer>普通操作證學科練習 · 每一次練習，都更接近熟練。</footer>
   <dialog id="submit-dialog" aria-labelledby="submit-heading" aria-describedby="submit-message"><h2 id="submit-heading">確認交卷？</h2><p id="submit-message"></p><div class="dialog-actions"><button id="cancel-submit" class="secondary" autofocus>繼續作答</button><button id="confirm-submit" class="primary">確認交卷</button></div></dialog>
+  <dialog id="new-exam-dialog" aria-labelledby="new-exam-heading" aria-describedby="new-exam-message"><h2 id="new-exam-heading">開始另一場測驗？</h2><p id="new-exam-message">目前測驗尚未交卷。開始新測驗會取代目前的作答進度；若想保留，請取消後選「繼續作答」。</p><div class="dialog-actions"><button id="cancel-new-exam" class="secondary" autofocus>保留目前進度</button><button id="confirm-new-exam" class="primary">開始新測驗</button></div></dialog>
 </body>
 </html>

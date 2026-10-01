@@ -1,0 +1,452 @@
+[
+  {
+    "id": 346,
+    "text": "酒精及部分藥物會削弱警覺、反應速度與判斷；任務前應確認操作人及協助成員都能安全履行職責。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      }
+    ]
+  },
+  {
+    "id": 347,
+    "text": "成藥也可能產生嗜睡、暈眩或認知副作用，不能因為可自行購買就認定不影響操作安全。",
+    "sources": [
+      {
+        "title": "FAA《飛行員航空知識手冊》第 17 章：成藥的副作用",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/phak/19_phak_ch17.pdf"
+      }
+    ]
+  },
+  {
+    "id": 348,
+    "text": "過度換氣、壓力、疲勞、脫水、中暑與酒精藥物都會影響操作人的生理或心智表現，三組皆屬安全評估因素。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      },
+      {
+        "title": "CDC／NIOSH：熱壓力的來源與風險因素",
+        "url": "https://www.cdc.gov/niosh/heat-stress/about/"
+      }
+    ]
+  },
+  {
+    "id": 349,
+    "text": "過度換氣會排出過多二氧化碳，可能出現暈眩、失去方向感，嚴重時甚至失去意識，因此會妨礙安全操控。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      }
+    ]
+  },
+  {
+    "id": 350,
+    "text": "過度換氣的症狀可涉及暈眩、視覺改變、末梢刺痛與肌肉痙攣；題庫三組都屬可能症狀，故選 D。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      },
+      {
+        "title": "英國劍橋大學醫院：過度換氣與呼吸訓練",
+        "url": "https://www.cuh.nhs.uk/patient-information/breathing-exercises-in-the-treatment-of-hyperventilation/"
+      }
+    ]
+  },
+  {
+    "id": 351,
+    "text": "過度換氣使血中二氧化碳過低；改善重點是讓呼吸恢復正常、減少過量換氣，使二氧化碳回復生理平衡。",
+    "sources": [
+      {
+        "title": "英國劍橋大學醫院：過度換氣與呼吸訓練",
+        "url": "https://www.cuh.nhs.uk/patient-information/breathing-exercises-in-the-treatment-of-hyperventilation/"
+      }
+    ]
+  },
+  {
+    "id": 352,
+    "text": "題庫想考的是降低過度換氣並恢復正常呼吸；放鬆與溫和、規律的呼吸有助控制呼吸型態。",
+    "sources": [
+      {
+        "title": "英國劍橋大學醫院：過度換氣與呼吸訓練",
+        "url": "https://www.cuh.nhs.uk/patient-information/breathing-exercises-in-the-treatment-of-hyperventilation/"
+      },
+      {
+        "title": "聖約翰救傷隊：過度換氣急救（2025 年臨床審閱）",
+        "url": "https://www.sja.org.uk/first-aid-advice/hyperventilation/"
+      }
+    ],
+    "note": "原答案 A 包含「紙袋呼吸」，與現行聖約翰救傷隊急救建議不同：不要自行用紙袋呼吸，可能使病況更糟。症狀持續、胸痛、明顯呼吸困難或意識異常時應停止操作並尋求醫療協助；緊急時撥 119。"
+  },
+  {
+    "id": 353,
+    "text": "壓力是身體面對生理、心理需求時的反應，可能改變心跳、呼吸與警覺程度；負荷過大會妨礙安全判斷。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 354,
+    "text": "壓力源可以來自外在噪音振動、身體疲勞，或工作與情緒負擔；三種來源都需要納入任務前評估。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 355,
+    "text": "短期高需求若持續存在而缺乏恢復，壓力可能由急性延伸為慢性，並累積對決策與健康的影響。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：航空人員工作壓力",
+        "url": "https://www.cdc.gov/niosh/aviation/prevention/aircrew-stress.html"
+      }
+    ]
+  },
+  {
+    "id": 356,
+    "text": "長期壓力超過個人可承受程度時，可能造成睡眠與決策困難，使工作表現明顯下降，而非保證能力增加。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：航空人員工作壓力",
+        "url": "https://www.cdc.gov/niosh/aviation/prevention/aircrew-stress.html"
+      }
+    ]
+  },
+  {
+    "id": 357,
+    "text": "已察覺能力因壓力下降，就代表安全餘裕受影響；應暫停任務、休息並處理壓力來源，必要時尋求協助。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：航空人員工作壓力",
+        "url": "https://www.cdc.gov/niosh/aviation/prevention/aircrew-stress.html"
+      }
+    ]
+  },
+  {
+    "id": 358,
+    "text": "狀況警覺要掌握整體飛行、操作人、航空器、環境及任務，並理解彼此如何影響接下來的安全。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：安全、工作量與檢查",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf"
+      }
+    ]
+  },
+  {
+    "id": 359,
+    "text": "疲勞、壓力及工作過量容易讓人只盯住一個問題，忽略位置、電量或周圍障礙，造成整體狀況警覺下降。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：安全、工作量與檢查",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf"
+      }
+    ]
+  },
+  {
+    "id": 360,
+    "text": "事先計畫、整理資訊並依重要性安排工作，可把準備工作提前完成，避免起降或異常時同時承擔太多任務。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：安全、工作量與檢查",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf"
+      }
+    ]
+  },
+  {
+    "id": 361,
+    "text": "疲勞可依來源區分生理與心理，也可依持續時間區分急性與慢性；兩種分類描述的是不同面向。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 362,
+    "text": "疲勞會影響專注、動作協調與溝通，使操作人更難整合資訊並做出可靠決策，因此三項皆可能。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 363,
+    "text": "急性疲勞是短期的身心疲倦，常與一段時間的工作、情緒負荷或睡眠不足有關，充分休息通常有助恢復。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      }
+    ]
+  },
+  {
+    "id": 364,
+    "text": "若反覆出現急性疲勞而恢復時間不足，疲勞便可能長期累積，形成慢性疲勞並持續影響判斷與工作表現。",
+    "sources": [
+      {
+        "title": "FAA《航空情報手冊》：飛行適任與航空醫學",
+        "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap8_section_1.html"
+      }
+    ]
+  },
+  {
+    "id": 365,
+    "text": "長期疲勞可能伴隨倦怠、心悸、呼吸不適、頭痛與情緒困擾，這些症狀都需要注意並評估原因。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ],
+    "note": "這些症狀不能單憑題目就診斷為慢性疲勞；尤其新出現的心悸、呼吸困難或胸痛，應尋求醫療評估。"
+  },
+  {
+    "id": 366,
+    "text": "技能疲勞是急性疲勞的一種，會使原本熟練操作的節奏失準，並讓注意力過度集中在視野中央而忽略周邊。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 367,
+    "text": "脫水指身體水分不足，可能導致疲勞、暈眩與反應下降；它與血糖不足或缺氧是不同問題。",
+    "sources": [
+      {
+        "title": "FAA：脫水與操作人表現",
+        "url": "https://www.faa.gov/pilots/training/airman_education/topics_of_interest/dehydration"
+      }
+    ]
+  },
+  {
+    "id": 368,
+    "text": "長時間熱環境或高海拔增加水分流失風險，忙碌與壓力可能讓補水不足；部分刺激性飲料也可能增加利尿或妨礙合適補水。",
+    "sources": [
+      {
+        "title": "FAA：脫水與操作人表現",
+        "url": "https://www.faa.gov/pilots/training/airman_education/topics_of_interest/dehydration"
+      }
+    ],
+    "note": "題庫將因素合併為 D，但心理壓力不代表一定脫水，飲料的影響也取決於成分、攝取量與個人狀況；應以實際水分收支評估。"
+  },
+  {
+    "id": 369,
+    "text": "口乾、口渴及疲勞都可能是水分不足的早期線索；脫水會影響體力與心智表現，因此題庫選 D。",
+    "sources": [
+      {
+        "title": "FAA：脫水與操作人表現",
+        "url": "https://www.faa.gov/pilots/training/airman_education/topics_of_interest/dehydration"
+      }
+    ],
+    "note": "症狀出現順序並非人人相同，也不宜等到口渴或疲勞才開始補水；原題「最先」是簡化表述。"
+  },
+  {
+    "id": 370,
+    "text": "補充水分能改善流失與攝入間的不平衡；戶外長時間操作應安排可取得飲水與休息的時段。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：熱環境工作、補水與休息",
+        "url": "https://www.cdc.gov/niosh/heat-stress/recommendations/"
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "text": "中暑是身體無法有效調節體溫、體溫快速升高的嚴重熱疾病，可能出現神經功能或意識異常。",
+    "sources": [
+      {
+        "title": "CDC：旅行時的熱疾病與中暑",
+        "url": "https://wwwnc.cdc.gov/travel/page/travel-to-hot-climates"
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "text": "環境熱與身體產熱超過可散熱能力時，熱量累積會使體溫上升；中暑的核心問題是體溫調節失效。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：熱壓力的來源與風險因素",
+        "url": "https://www.cdc.gov/niosh/heat-stress/about/"
+      }
+    ]
+  },
+  {
+    "id": 373,
+    "text": "規律補水有助降低脫水與熱疾病風險；也要配合遮蔭、降溫、休息及避開過度曝熱，不能只靠喝水。",
+    "sources": [
+      {
+        "title": "CDC／NIOSH：熱環境工作、補水與休息",
+        "url": "https://www.cdc.gov/niosh/heat-stress/recommendations/"
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "text": "不同成藥、抗組織胺及解除充血劑可能有暈眩、嗜睡或其他副作用，應閱讀標示並確認不影響安全操作。",
+    "sources": [
+      {
+        "title": "FAA《飛行員航空知識手冊》第 17 章：成藥的副作用",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/phak/19_phak_ch17.pdf"
+      }
+    ],
+    "note": "「可能」不代表所有成藥或同類藥物都有相同副作用；實際應依有效成分與醫師／藥師評估。"
+  },
+  {
+    "id": 375,
+    "text": "酒精會影響判斷、協調、視野、記憶與注意力；即使主觀覺得清醒，操作表現仍可能受損。",
+    "sources": [
+      {
+        "title": "FAA《熱氣球飛行手冊》第 9 章：航空醫學因素",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/Balloon_Flying_Handbook_FAA-H-8083-11B/bfh_chapter_9.pdf"
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "text": "每次操作前都應重新確認機體、電源、連線與環境，因前一次正常不代表這次仍處於安全狀態。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：安全、工作量與檢查",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf"
+      }
+    ]
+  },
+  {
+    "id": 377,
+    "text": "起飛前發現異常應先查明並修正，確認安全狀態再操作；只記錄異常不能消除實際危害。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：安全、工作量與檢查",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf"
+      }
+    ]
+  },
+  {
+    "id": 378,
+    "text": "迫降是無法繼續飛行而必須立即落地，預防性著陸是在仍能飛行時提前避險，水上迫降則以水面為落地處。",
+    "sources": [
+      {
+        "title": "FAA《飛機飛行手冊》第 18 章：緊急程序與著陸",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/19_afh_ch18.pdf"
+      }
+    ]
+  },
+  {
+    "id": 379,
+    "text": "若沒有事先熟悉機型緊急程序，突發異常時可能延誤關鍵控制與落地時機，使原可控制的事件惡化為墜落。",
+    "sources": [
+      {
+        "title": "FAA《飛機飛行手冊》第 18 章：緊急程序與著陸",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/19_afh_ch18.pdf"
+      }
+    ]
+  },
+  {
+    "id": 380,
+    "text": "穩定操控並掌握位置高度後，應儘快辨識可到達且能減少對人員、財產危害的緊急落地區，為後續處置保留選擇。",
+    "sources": [
+      {
+        "title": "FAA《飛機飛行手冊》第 18 章：緊急程序與著陸",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/19_afh_ch18.pdf"
+      }
+    ],
+    "note": "實際程序與順序應遵循該機型的緊急檢查表；本題強調預先找落地處，不代表任何故障都能跳過必要的立即處置或通報。"
+  },
+  {
+    "id": 381,
+    "text": "良好飛行決策需要從經驗與訓練學習，再蒐集資訊、評估可行選項並選擇行動，還應檢查行動的結果。",
+    "sources": [
+      {
+        "title": "FAA AC 60-22：航空決策、風險與狀況警覺",
+        "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_60-22.pdf"
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "text": "降低風險可透過取消危險作業、減少曝險，或隔開無人機與人員等方式；控制措施要與辨識出的危害相符。",
+    "sources": [
+      {
+        "title": "FAA／FAASTeam：風險管理的基本原則",
+        "url": "https://www.faasafety.gov/gslac/alc/libview_printerfriendly.aspx?id=6107"
+      }
+    ]
+  },
+  {
+    "id": 383,
+    "text": "基本原則是避免無必要風險，由能落實控制的人決策，評估利益與危害，並在任務各階段持續管理風險。",
+    "sources": [
+      {
+        "title": "FAA／FAASTeam：風險管理的基本原則",
+        "url": "https://www.faasafety.gov/gslac/alc/libview_printerfriendly.aspx?id=6107"
+      }
+    ],
+    "note": "選項 A 的「將風險設定在合適的層級」較精確應為「在適當的責任層級做風險決策」；接受風險仍須遵守法規與機型限制。"
+  },
+  {
+    "id": 384,
+    "text": "反威權容易忽略規則，衝動容易省略思考，僥倖則低估自己遭遇事故的可能性；三者均為航空決策中的危險心態。",
+    "sources": [
+      {
+        "title": "FAA／FAASTeam：五種危險心態",
+        "url": "https://www.faasafety.gov/gslac/ALC/course_content_popup.aspx?cID=723&preview=true&sID=1450"
+      }
+    ]
+  },
+  {
+    "id": 385,
+    "text": "辨識自身限制、預想可能失誤並持續覺察狀態，才能及早調整任務或增加控制措施；個人風險需要事前與途中都評估。",
+    "sources": [
+      {
+        "title": "FAA AC 60-22：航空決策、風險與狀況警覺",
+        "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_60-22.pdf"
+      }
+    ]
+  },
+  {
+    "id": 386,
+    "text": "人為因素涵蓋訓練、程序、溝通、疲勞及設備設計等，會影響操作與維修的失誤機率，因此是飛安管理的重要焦點。",
+    "sources": [
+      {
+        "title": "FAA 人因研究部門：人為因素與航空安全",
+        "url": "https://www.hf.faa.gov/role.aspx"
+      }
+    ]
+  },
+  {
+    "id": 387,
+    "text": "自動決策依靠訓練與經驗建立情境辨識，把熟悉問題與可行反應迅速配對，而非憑空直覺或單純衝動。",
+    "sources": [
+      {
+        "title": "FAA 航空人員標準報告：自動／自然決策模式",
+        "url": "https://www.faa.gov/regulations_policies/rulemaking/committees/documents/media/ARAC%20Cover%20Letter%20ACSWG%20Interim%20Report%20September%202020%20to%20FAA.pdf"
+      }
+    ]
+  },
+  {
+    "id": 388,
+    "text": "在緊急、快速變化且時間不足以逐一分析的情況，熟練者可用訓練形成的情境辨識快速採取可行行動。",
+    "sources": [
+      {
+        "title": "FAA 航空人員標準報告：自動／自然決策模式",
+        "url": "https://www.faa.gov/regulations_policies/rulemaking/committees/documents/media/ARAC%20Cover%20Letter%20ACSWG%20Interim%20Report%20September%202020%20to%20FAA.pdf"
+      }
+    ],
+    "note": "此處的「自動決策」指人的經驗決策模式，並非讓無人機自動駕駛；仍需依現場資訊與機型程序持續調整。"
+  }
+]

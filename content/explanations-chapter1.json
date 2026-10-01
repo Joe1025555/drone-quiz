@@ -1,0 +1,980 @@
+[
+    {
+        "id":  1,
+        "text":  "失控墜落可能傷及地面人員與財物，違法飛行也可能干擾其他航空器或公共活動；同一次事件可同時造成三種後果。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之9",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-9\u0026pcode=K0090001"
+                        },
+                        {
+                            "title":  "民用航空法第99條之15",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-15\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  2,
+        "text":  "使用限制告訴你哪些環境不能飛，操作性能決定機體能承受的條件，保固範圍則幫助了解故障後的維修安排；購買時三者都應確認。",
+        "sources":  [
+                        {
+                            "title":  "民航局：遙控無人機學科測驗指南（附錄1）",
+                            "url":  "https://www.caa.gov.tw/FileAtt.ashx?id=29275\u0026lang=1"
+                        }
+                    ],
+        "note":  "保固是產品與契約資訊；保固有效不代表飛航活動已合法或安全。"
+    },
+    {
+        "id":  3,
+        "text":  "註冊讓機體與所有人可被識別，操作人教育提升安全判斷，區域警示降低誤入限制空域的機會；三者共同降低事故風險。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之10",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-10\u0026pcode=K0090001"
+                        },
+                        {
+                            "title":  "遙控無人機管理規則第12條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=12\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  4,
+        "text":  "起飛前要能判斷法規、天氣與設備狀態，操作中則要能維持控制及處理異常；取得操作資格是為了涵蓋這兩個階段的安全能力。",
+        "sources":  [
+                        {
+                            "title":  "民航局：遙控無人機學科測驗指南（附錄1）",
+                            "url":  "https://www.caa.gov.tw/FileAtt.ashx?id=29275\u0026lang=1"
+                        },
+                        {
+                            "title":  "遙控無人機管理規則第20條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=20\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "普通操作證以學科測驗取得；專業操作證另有體檢與學、術科要求，並非所有操作證都考術科。"
+    },
+    {
+        "id":  5,
+        "text":  "外國證明文件不會自動取得在臺灣操作的效力；外國人須向民航局辦理認可，再遵守我國的活動區域與操作限制。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之12",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-12\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  6,
+        "text":  "即時影像受鏡頭視角、傳輸延遲與遮蔽限制，不能呈現機體四周全部障礙與來機；操作人仍須持續監視飛航及周遭狀況。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  7,
+        "text":  "無人機是一種工具，使用它也須遵守刑法、民法及其他適用法規；取得註冊或操作證，不會使違法行為變成合法。",
+        "sources":  [
+                        {
+                            "title":  "民航局：基本規範與其他法律",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2424\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  8,
+        "text":  "刑法保護他人非公開活動、私下言談及身體隱私，禁止無正當理由利用設備窺視、竊聽或竊錄；三種行為都可能侵害這些權益。",
+        "sources":  [
+                        {
+                            "title":  "刑法第315條之1：妨害秘密",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=315-1\u0026pcode=C0000001"
+                        }
+                    ]
+    },
+    {
+        "id":  9,
+        "text":  "錄音、影像與電磁紀錄都能保存他人的私密資訊，因此題庫以三者均不可擅自侵害隱私為考點。刑法禁止的是無故竊錄非公開活動、言談或身體隱私，不能只憑『未經同意』便認定一律成立犯罪。",
+        "sources":  [
+                        {
+                            "title":  "刑法第315條之1：妨害秘密",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=315-1\u0026pcode=C0000001"
+                        },
+                        {
+                            "title":  "民法第18條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=18\u0026pcode=B0000001"
+                        }
+                    ],
+        "note":  "題幹範圍較寬；公開場合拍攝、正當理由及其他法律依據須依個案判斷，保留題庫答案 D。"
+    },
+    {
+        "id":  10,
+        "text":  "庭院、教室與辦公室均涉及所有人或管理者的使用管理權，不能把無人機的機動性當成任意進入的許可；活動前應取得場地允許並尊重隱私。",
+        "sources":  [
+                        {
+                            "title":  "民法第765條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=765\u0026pcode=B0000001"
+                        },
+                        {
+                            "title":  "民航局：基本規範篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2424\u0026lang=1"
+                        }
+                    ],
+        "note":  "這是尊重場地權利的概括考點；室內密閉空間不適用民用航空法無人機專章，仍須遵守其他法律與場地規範。"
+    },
+    {
+        "id":  11,
+        "text":  "飛行事故的影響會延伸到旁觀者、公共秩序與其他航空器，超出操作者個人範圍，所以題庫將這類對社會第三人的風險稱為『社會風險』。",
+        "sources":  [
+                        {
+                            "title":  "民航局：遙控無人機學科測驗指南（附錄1）",
+                            "url":  "https://www.caa.gov.tw/FileAtt.ashx?id=29275\u0026lang=1"
+                        }
+                    ],
+        "note":  "『社會風險』是本題的安全管理概念，並非民用航空法中獨立定義的風險類別。"
+    },
+    {
+        "id":  12,
+        "text":  "違規罰則用來約束危害空域、地面人員與公共秩序的行為，促使所有人及操作人遵守安全規範；秩序、公共利益與安全都是這套制度保護的面向。",
+        "sources":  [
+                        {
+                            "title":  "民航局：罰則篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2435\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  13,
+        "text":  "題目問的是裁罰的安全與公益考量，違規造成的人身、財產及公共安全影響，才是相關因素。個案罰鍰還須依法審酌責難程度、所得利益等因素，並非只看損害額。",
+        "sources":  [
+                        {
+                            "title":  "行政罰法第18條：罰鍰裁量因素",
+                            "url":  "https://mojlaw.moj.gov.tw/LawContentExtentHistory.aspx?LSID=FL034026\u0026LawNo=18"
+                        }
+                    ]
+    },
+    {
+        "id":  14,
+        "text":  "休閒活動在一般操作限制下，仍由操作者自行評估環境與風險、決定是否飛行；民航局將這類風險管理定位為以自我管理為主。",
+        "sources":  [
+                        {
+                            "title":  "民航局：賠償責任及自然人自我管理",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2431\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  15,
+        "text":  "責任險處理無人機活動造成第三人傷亡或財物損失的賠償風險，與積水、地震或颱風的財產保障不同。依法應投保的活動，須在活動前完成足額保障。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之15",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-15\u0026pcode=K0090001"
+                        }
+                    ],
+        "note":  "法定強制投保義務是針對政府機關、學校或法人依第99條之14第3項從事核准活動；本題把『為法人從事業務』概括敘述，投保主體及適用範圍須按實際活動確認。"
+    },
+    {
+        "id":  16,
+        "text":  "法律以無人航空器及其控制方式界定範圍，既包括透過信號鏈路控制，也包括自動駕駛，並保留民航局公告其他類型的機制。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第2條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  17,
+        "text":  "農會的農藥噴灑屬法人業務，操作人須具備適用的專業操作資格；專業操作證須通過學、術科測驗，噴灑活動也要辦理相關核准。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第20條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=20\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "民航局：第99條之14 操作規範篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2430\u0026lang=1"
+                        }
+                    ],
+        "note":  "實際農噴還涉及操作證加註、活動許可及農政規定；通過學、術科本身不等於可立即執行所有農噴任務。"
+    },
+    {
+        "id":  18,
+        "text":  "民用航空法第99條之9把無人機專章的活動範圍訂在建築物外開放空間，因此 B 符合條文適用範圍。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之9",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-9\u0026pcode=K0090001"
+                        }
+                    ],
+        "note":  "室內密閉空間仍可能適用其他法律及場地管理規範，不能推論為完全不受管理。"
+    },
+    {
+        "id":  19,
+        "text":  "無人機是否安全、風險是否可接受，以及活動是否符合規定，都不能因取得某項許可而轉交他人負責；條文明定所有人或操作人負這些責任。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之9",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-9\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  20,
+        "text":  "禁航區、限航區及機場四周公告範圍原則上都禁止無人機飛航；只有符合資格並完成法定同意程序的活動，才能在核准條件下進行。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之13 活動區域篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2429\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  21,
+        "text":  "航空站或飛行場周邊的禁止活動距離，由民航局依飛航安全需求公告；實際範圍應查公告與圖資，不能自行假定固定半徑。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之13 活動區域篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2429\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  22,
+        "text":  "地方政府在中央限制範圍外、距地表不逾400呎的區域，得按地方公益及安全需求公告活動地點、時間與其他管理事項。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之13 活動區域篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2429\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  23,
+        "text":  "相關中央主管機關有禁限飛需求時，是提請所在地直轄市或縣市政府公告，由地方政府配合落實；不是直接交由里鄰或農會公告。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之13 活動區域篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2429\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  24,
+        "text":  "此題屬中央管理的禁限航區與機場周邊範圍，申請窗口是民航局；民航局須再會商目的事業主管機關，取得同意後才可活動。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之13",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-13\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  25,
+        "text":  "此題屬地方政府公告管理的區域、時間或事項，申請窗口因此是直轄市或縣市政府，再由其會商相關中央主管機關。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之13",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-13\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  26,
+        "text":  "禁航區、限航區的管理人負有維護該區域的責任，法律授權其對未經同意進入的無人機採取適當制止或排除措施。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之13",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-13\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  27,
+        "text":  "在航空站或飛行場周邊公告範圍，取締由經營人或管理人會同航空警察局辦理，以配合機場飛航安全與航空保安權責。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之13",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-13\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  28,
+        "text":  "違反地方政府公告的活動區域、時間或管理事項，依法由直轄市或縣市政府取締；必要時可請警察機關協助。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之13",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-13\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  29,
+        "text":  "一般活動的400呎上限是機體相對其下方地面或水面的實際高度，約為122公尺；不是海拔高度，也不是一律從起飛點累計。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之14 操作規範篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2430\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  30,
+        "text":  "投擲或噴灑會讓物品離開機體，增加地面人員及財物受害風險，因此一般活動禁止；符合資格的機關、學校或法人須依法取得操作限制排除及活動許可。",
+        "sources":  [
+                        {
+                            "title":  "民航局：第99條之14 操作規範篇",
+                            "url":  "https://www.caa.gov.tw/Article.aspx?a=2430\u0026lang=1"
+                        }
+                    ]
+    },
+    {
+        "id":  31,
+        "text":  "題目區分一般飛航所需設備與法律公告的危險物品；後者具有額外安全風險，一般活動不得裝載。燃油或電池仍須依設備用途與安全規格使用。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ],
+        "note":  "符合資格的機關、學校或法人可依法申請部分操作限制排除；本題是在未獲特別核准的一般活動前提下作答。"
+    },
+    {
+        "id":  32,
+        "text":  "民用航空法第99條之17把無人機分類、操作限制、活動許可等細部規則的訂定權授予交通部，民航局則辦理各項公告與申請業務。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之17",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-17\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  33,
+        "text":  "在人群或室外集會上方失控，容易同時造成多人傷害，屬一般飛航禁止項目；開放場地也須另確認活動時間及其他限制。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  34,
+        "text":  "夜間較難辨識機體、障礙與其他來機，因此一般活動限日出至日落；日落後到翌日日出前須具法定資格及核准，不能當作普通休閒操作。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  35,
+        "text":  "一般操作不得同時控制兩架以上，所以同一操作人在同一時間最多控制一架；單架限制有助維持持續監視與及時避讓。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  36,
+        "text":  "飛航期間安全判斷取決於機體狀態、附近人車、障礙及其他航空器，包裝與造型無法反映現場變化；法律要求隨時監視飛航及周遭狀況。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  37,
+        "text":  "其他航空器、建築物及人群都可能因接近或碰撞而受害；應保持安全間隔、察覺來機並及時避讓，不能只顧其中一類。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第29條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=29\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  38,
+        "text":  "排除高度、夜間或其他法定操作限制，需要民航局審查機關、學校或法人的設備與作業程序，取得核准後才能依許可執行。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ],
+        "note":  "第99條之14第2項可申請排除的是第1項第1至8款；持續監視及防止碰撞等第9、10款安全義務仍須遵守。"
+    },
+    {
+        "id":  39,
+        "text":  "人群或集會上空活動牽涉場地與公共安全；取得民航局核准之外，法律另外要求先取得場地所在地方政府及相關中央主管機關同意。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之14",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-14\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  40,
+        "text":  "民用航空法對無人機所有人的賠償責任採嚴格規範，故意與過失造成死傷或財損都包含在內；條文甚至明定不可抗力造成的損害亦應負責。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之15",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-15\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  41,
+        "text":  "把機體交給他人操作，不會讓所有人免除因該飛行造成的賠償責任；法律要求所有人與操作人對所生損害負連帶責任。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之15",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-15\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  42,
+        "text":  "此項投保義務直接出自民用航空法第99條之15第3項，並依該法授權辦法的損害賠償額投保；不是由一般保險契約自行決定是否投保。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第99條之15",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-15\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  43,
+        "text":  "禁限航區及機場周邊違規屬較嚴重的空域風險，適用第118條之1，罰鍰為30萬至150萬元，並有廢止操作證及得沒入機體的規定。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之1",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-1\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  44,
+        "text":  "未經合法核准飛行超過距地面或水面400呎，與禁限空域違規同列第118條之1的重罰類型，因此罰鍰也是30萬至150萬元。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之1",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-1\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  45,
+        "text":  "依法須持操作證而未領證即操作，適用第118條之2第1項的6萬至30萬元罰鍰，並禁止活動；情節重大時得沒入機體。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之2",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-2\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  46,
+        "text":  "依法應投保卻未投保或投保金額不足，與未領必要操作證同屬第118條之2第1項，罰鍰為6萬至30萬元。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之2",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-2\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  47,
+        "text":  "未按規定註冊或標明註冊號碼，會妨礙識別機體與責任人，列在第118條之2第2項，罰鍰為3萬至15萬元。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之2",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-2\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  48,
+        "text":  "地方公告的區域、時間與管理事項也是必須遵守的飛航規範，違反時適用第118條之2第2項，罰鍰為3萬至15萬元。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之2",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-2\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  49,
+        "text":  "第99條之14第1項第2至10款的飛航規範違規，罰鍰為3萬至15萬元；高度超過400呎則另適用第118條之1的較重罰則。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之2",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-2\u0026pcode=K0090001"
+                        },
+                        {
+                            "title":  "民用航空法第118條之1",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-1\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  50,
+        "text":  "射頻識別、檢驗、活動許可與通報等管理規則事項，適用第118條之3，罰鍰範圍為1萬至150萬元；不能套用註冊違規的3萬至15萬元。",
+        "sources":  [
+                        {
+                            "title":  "民用航空法第118條之3",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=118-3\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  51,
+        "text":  "這種資料鏈路的用途是傳遞飛航控制指令與管理資訊，法律因此稱為通訊及控制信號鏈路；不是特定的網際網路或光纖媒介。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第2條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  52,
+        "text":  "最大起飛重量涵蓋整套設計飛行重量，電池、燃料與掛載設備都算入，不能只用空機重量判斷註冊、操作證或檢驗級距。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第2條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  53,
+        "text":  "法規中的操作人不只限拿遙控器的人，也包括指揮或監督飛航活動的人；定義依實際飛航角色判斷。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第2條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  54,
+        "text":  "目視觀察員負責提供現場飛航資訊，補足實際操作人的觀察需求，且法規定義要求其持有無人機操作證；所有人身分本身不等同這個角色。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第2條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=2\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  55,
+        "text":  "構造分類依產生升力與控制機體的形式區分，無人飛機、無人直昇機與無人多旋翼機都在管理規則的明列類型內。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第3條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=3\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  56,
+        "text":  "本題使用多旋翼的構造分類概念，以三個以上垂直傳動軸的旋翼產生升力；三旋翼也屬多旋翼，不必等到四旋翼。",
+        "sources":  [
+                        {
+                            "title":  "民航局：遙控無人機學科測驗指南（附錄1）",
+                            "url":  "https://www.caa.gov.tw/FileAtt.ashx?id=29275\u0026lang=1"
+                        },
+                        {
+                            "title":  "遙控無人機管理規則訂定草案第3條逐條說明：多旋翼構造",
+                            "url":  "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg025006/ch06/type3/gov50/num20/images/Eg01.pdf"
+                        }
+                    ]
+    },
+    {
+        "id":  57,
+        "text":  "所有人負責機體妥善維護，操作人負責安全飛航，兩者皆影響事故風險；法規明定這兩類人應負飛航安全責任。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第4條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=4\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  58,
+        "text":  "多人參與操作時，若沒有統一最終決策，緊急處置可能互相衝突；因此飛行前必須指定一位決定權人，未指定不得活動。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第5條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=5\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  59,
+        "text":  "機身未遮蔽的平整面通常較容易固定標示並辨識，符合號碼應位於顯著位置與固定結構外部的要求；旋槳或易拆換處較不利。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第8條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "題目問『較適合』，並非法律一律禁止在所有電池蓋或起落架標示；仍須看實際結構與可辨識性。"
+    },
+    {
+        "id":  60,
+        "text":  "標示只有在飛行時仍牢固、乾淨且能辨識，才有識別機體與責任人的作用；三項條件是同時適用的要求。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第8條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  61,
+        "text":  "號碼必須能從機體外部辨識且在飛行時穩定留在機上，所以規則指定固定結構外部，不能藏在內部或設於轉動機構。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第8條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  62,
+        "text":  "號碼與背景形成明顯反襯，才能讓人用肉眼辨識；刻意融入背景或使用近似顏色，會失去註冊標示的識別功能。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第8條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=8\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  63,
+        "text":  "偽造是製作不實號碼，變造是修改原號碼，矇領是用不實方式取得；三者都破壞註冊資料真實性，管理規則全部禁止。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第9條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=9\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  64,
+        "text":  "註冊是把號碼對應到特定機體與所有人，不能把已有號碼挪給尚未註冊的另一架機體，讓它看似完成註冊。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第9條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=9\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "民用航空法第99條之10",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=99-10\u0026pcode=K0090001"
+                        }
+                    ]
+    },
+    {
+        "id":  65,
+        "text":  "管理規則把需要射頻識別的重量門檻及技術規範交由民航局公告，本題考的是公告機關；不能只憑題目推定目前的具體重量門檻。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第11條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=11\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  66,
+        "text":  "型式檢驗針對機體設計、製造或改裝後的型式性能，規則允許對該型式負責的設計者、製造者或改裝者提出申請。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第13條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=13\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  67,
+        "text":  "型式檢驗是民航局主管的無人機安全檢驗程序，申請書及相關技術資料須向民航局提出，而不是由衛福、內政或科技機關審查。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第13條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=13\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  68,
+        "text":  "國外產品引進國內時，由進口者對申請型式檢驗或認可負責；依條件也可能申請認可，並非所有進口情形都只能走型式檢驗。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第13條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=13\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  69,
+        "text":  "設計、製造或改裝階段的試飛仍會使用空域並帶來安全風險，所以要先提出試飛計畫、場地及操作人資格等資料向民航局申請核准。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第14條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=14\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  70,
+        "text":  "實體檢驗確認的是特定25公斤以上機體是否符合其性能諸元，與型式設計的檢驗不同；持有該機體的所有人是申請主體。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第15條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=15\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  71,
+        "text":  "25公斤以上機體的實體檢驗由民航局辦理，經合格後發給實體檢驗合格證，作為特定機體符合規範的證明。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第15條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=15\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  72,
+        "text":  "本題要辨識自製自用大型機體的申請主體，為機體所有人，所以保留 C。現行第15條規定自行製造、使用的25公斤以上機體，由所有人申請特種實體檢驗。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第15條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=15\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "題庫『合併型式檢驗及實體檢驗』的程序措辭與現行條文不一致；實際申辦須依民航局公告的特種實體檢驗程序。"
+    },
+    {
+        "id":  73,
+        "text":  "無論一般實體檢驗或自製自用機體的特種實體檢驗，申辦主管機關都是民航局，因此本題機關選項為 B。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第15條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=15\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "題庫的『合併型式檢驗及實體檢驗』並非現行第15條用語；現行自製自用25公斤以上機體採特種實體檢驗。"
+    },
+    {
+        "id":  74,
+        "text":  "證明文件記載事項變更後，須由所有人於事實發生日起15日內，檢附原證向民航局申請審查並換發；不是由操作人任意選擇申請期限。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第16條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=16\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  75,
+        "text":  "題庫 A 表達的是產品進入市場前完成資訊登錄。現行第17條把時點訂為『公開販售前』，製造者或進口者應先在民航局指定系統完成登錄。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第17條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=17\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "題庫『販售或進口前』沿用舊條文；自2025年12月1日生效的現行規定是公開販售前，不能把本題當成一律須在進口前登錄的依據。"
+    },
+    {
+        "id":  76,
+        "text":  "產品資訊登錄屬民航局的無人機管理業務，製造者或進口者須使用民航局指定資訊系統辦理，內容也包括型式、規格及相關檢驗資料。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第17條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=17\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  77,
+        "text":  "25公斤以上系統出現會危害安全的故障、失效或缺陷時，相關設計、製造、改裝或進口者須採取補正措施；完全不處理會讓風險持續。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第18條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=18\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  78,
+        "text":  "機關、學校或法人所有的無人機，操作人依法須持無人機操作證，且依操作權限通常須具適用的專業操作證；機師或維修證不能替代。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第19條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=19\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "遙控無人機管理規則第20條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=20\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  79,
+        "text":  "法定類別是學習、普通與專業操作證，沒有『暫時操作證』這一類；各類依申請資格及操作權限區分。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第20條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=20\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  80,
+        "text":  "自然人所有未達2公斤的機體，不在本題列出的必須領操作證級距內；2至未達15公斤且裝置導航設備需普通操作證，15公斤以上需專業操作證。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第19條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=19\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "遙控無人機管理規則第20條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=20\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "免考操作證不等於免註冊或免遵守活動區域；自然人250公克以上機體仍須註冊。"
+    },
+    {
+        "id":  81,
+        "text":  "專業操作證的學科合格並非無限期有效，術科須在學科通過日起一年內完成；超過期限未完成就須重新申請學科。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第22條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=22\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  82,
+        "text":  "飛航前檢查才能在起飛前發現鬆脫、電池或系統異常，並確認符合安全條件；飛完後才檢查無法補回本次起飛前的必要確認。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第25條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=25\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  83,
+        "text":  "氣象、空域限制與空地面危害，會直接決定本次飛行是否安全與合法，都是法定飛前考量；家庭狀況不是條文明列的環境評估項目。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第26條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=26\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  84,
+        "text":  "移動載具會讓操作位置持續改變，增加觀察、距離與控制負擔；一般操作限制禁止在移動中的航空器、車輛或船艦上操作。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第28條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=28\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  85,
+        "text":  "政府機關、學校與法人須先提交登記證明、系統清單、人員名冊及作業手冊，經民航局核准其活動能力，再依業務內容辦理需要的活動許可。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第30條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=30\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  86,
+        "text":  "在地方政府公告的禁止或限制區域活動，一般須於活動日15日前提交計畫書，讓地方政府有時間會商相關中央主管機關並審查。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第31條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=31\u0026pcode=K0090083"
+                        }
+                    ],
+        "note":  "第31條另允許地方政府對其管理區域的活動申請訂定不同規定；涉及中央或軍事航空管理區域也有其他期限。"
+    },
+    {
+        "id":  87,
+        "text":  "2公斤以上且裝導航設備的無人機受實質損害或失蹤，屬明列的飛安通報事件；從發生或得知消息起24小時內須填表通報民航局。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第36條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=36\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  88,
+        "text":  "接近或碰撞其他航空器、障礙物已顯示飛航安全異常，規則將其列入通報事件，期限同樣是發生或得知後24小時內。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第36條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=36\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  89,
+        "text":  "飛安事件後若仍繼續操作，可能擴大未明原因的風險；規則授權民航局直接暫停相關操作或活動，不必先取得操作人的同意。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第37條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=37\u0026pcode=K0090083"
+                        }
+                    ]
+    },
+    {
+        "id":  90,
+        "text":  "各項申請與通報可依規則透過民航局指定資訊系統電子化辦理，讓註冊、操作證、許可與飛安資料能在同一管理體系留存。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第39條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=39\u0026pcode=K0090083"
+                        },
+                        {
+                            "title":  "民航局遙控無人機管理資訊系統",
+                            "url":  "https://drone.caa.gov.tw/Default/DataList1"
+                        }
+                    ]
+    },
+    {
+        "id":  91,
+        "text":  "一般操作須與題列道路、鐵路、捷運、建築物及障礙物保持30公尺以上距離；A 的10公尺與 B 的20公尺都不足，只有 C 符合。",
+        "sources":  [
+                        {
+                            "title":  "遙控無人機管理規則第28條",
+                            "url":  "https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=28\u0026pcode=K0090083"
+                        }
+                    ]
+    }
+]

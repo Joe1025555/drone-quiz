@@ -45,8 +45,9 @@
     });
     return { score: correct * POINTS, correct, unanswered, wrong: questions.length - correct - unanswered, items };
   }
-  function practice(bank, random = Math.random) {
-    return shuffle(bank, random).slice(0, COUNT);
+  function practice(bank, count = COUNT, random = Math.random) {
+    if (!Number.isInteger(count) || count < 0) throw new Error('練習題數必須為非負整數');
+    return shuffle(bank, random).slice(0, count);
   }
   const api = { COUNT, POINTS, DURATION, sample, practice, remaining, grade };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;

@@ -1,0 +1,847 @@
+[
+  {
+    "id": 264,
+    "text": "升力公式中的空氣密度是正比因子；在空速、翼面積與升力係數相同時，密度增加就會增加升力。",
+    "sources": [
+      {
+        "title": "FAA《飛行員航空知識手冊》第 5 章：升力公式",
+        "url": "https://www.faa.gov/sites/faa.gov/files/07_phak_ch5_0.pdf"
+      }
+    ]
+  },
+  {
+    "id": 265,
+    "text": "航空氣象主要以氣壓、溫度與水氣含量判斷空氣密度；高度則透過氣壓影響密度，應力不是這裡的氣象因子。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 266,
+    "text": "密度高度是把現場空氣密度換成標準大氣中相同密度所在的高度；空氣越稀薄，對應的密度高度越高。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 267,
+    "text": "空氣越濃密，對應標準大氣中較低高度的密度，因此密度高度較低，通常有較好的升力與螺旋槳推力條件。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 268,
+    "text": "較高氣壓的低海拔環境通常使空氣較濃密；高溫、高濕或低氣壓則會降低密度、提高密度高度。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 269,
+    "text": "高溫會使同一氣壓下的空氣密度降低，因此傾向增加密度高度，而不是造成低密度高度。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 270,
+    "text": "氣體具有可壓縮性，外界壓力與體積的改變可使空氣壓縮或膨脹；這是活塞與氣體作功的基本概念。",
+    "sources": [
+      {
+        "title": "NASA：理想氣體狀態方程式",
+        "url": "https://www.grc.nasa.gov/www/k-12/BGP/eqstat.html"
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "text": "題庫意圖考定壓下的密度與溫度關係：降溫時密度增加，可由 ρ＝p／(RT) 判斷。",
+    "sources": [
+      {
+        "title": "NASA：理想氣體狀態方程式",
+        "url": "https://www.grc.nasa.gov/www/k-12/BGP/eqstat.html"
+      }
+    ],
+    "note": "題目只說「固定體積」並不足以推出答案 A。若密閉容器的質量與體積都固定，密度＝質量／體積會保持不變，改變的是氣壓；本頁保留原題庫答案。"
+  },
+  {
+    "id": 272,
+    "text": "對流層的一般垂直分布是高度越高、氣壓越低，平均溫度也越低；這是常用標準大氣的趨勢。",
+    "sources": [
+      {
+        "title": "NOAA：大氣分層與對流層",
+        "url": "https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere"
+      }
+    ],
+    "note": "實際大氣可能出現逆溫層，溫度並非在任何時間、每個高度都隨高度降低；氣壓仍通常隨高度降低。"
+  },
+  {
+    "id": 273,
+    "text": "標準海平面氣壓為 1013.25 hPa，亦即 1013.25 毫巴，約等於 29.92 inHg，因此 1017.2 毫巴的敘述錯誤。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓單位與標準氣壓",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/winds/pressure_winds/Pressure.htm"
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "text": "29.92 inHg 約等於 1013.25 毫巴；題庫採近似值 1013.2，與其他選項相差的十倍量級要分清楚。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓單位與標準氣壓",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/winds/pressure_winds/Pressure.htm"
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "text": "地表受熱不均會造成空氣溫度、密度與環流的差異，所以實際氣壓不會處處等於標準大氣的參考值。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓系統與鋒面",
+        "url": "https://www.weather.gov/lmk/basic-fronts"
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "text": "氣壓高度計以氣壓推算高度，若未使用合適的氣壓基準或校正，就會使指示高度偏離實際高度。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓感測器與航空高度",
+        "url": "https://www.weather.gov/asos/BarometricPressureSensor.html"
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "text": "氣壓上升常代表低壓離開或高壓勢力增強，較常伴隨下沉氣流與天氣改善，題庫因此選 C。",
+    "sources": [
+      {
+        "title": "NOAA：風的形成與高低氣壓",
+        "url": "https://www.noaa.gov/jetstream/synoptic/origin-of-wind"
+      }
+    ],
+    "note": "這是常見趨勢，不能單憑氣壓上升保證天氣轉好；仍須合併鋒面、濕度、雲雨及官方預報判斷。"
+  },
+  {
+    "id": 278,
+    "text": "氣壓下降常與低壓系統接近有關，上升氣流較利於成雲降雨，因此題庫以天氣轉壞作為判斷。",
+    "sources": [
+      {
+        "title": "NOAA：風的形成與高低氣壓",
+        "url": "https://www.noaa.gov/jetstream/synoptic/origin-of-wind"
+      }
+    ],
+    "note": "氣壓趨勢只是線索，並非每次下降都會轉壞；實際飛行需合併天氣圖與預報。"
+  },
+  {
+    "id": 279,
+    "text": "氣象上的風主要指空氣的水平移動，以風向與風速描述；雲、霧、霾描述的是其他大氣現象。",
+    "sources": [
+      {
+        "title": "NOAA：風的形成與高低氣壓",
+        "url": "https://www.noaa.gov/jetstream/synoptic/origin-of-wind"
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "text": "風速是距離除以時間，可用 m/s、km/h 或節；公斤是質量單位，公斤／小時也不是速度單位。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：節（KT）速度單位",
+        "url": "https://forecast.weather.gov/glossary.php?word=kt"
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "text": "逆風可讓固定翼以較低地面速度取得所需空速，縮短起降距離；起降方向仍須配合機型手冊及風速限制。",
+    "sources": [
+      {
+        "title": "FAA：風向對起飛距離的影響",
+        "url": "https://www.faa.gov/sites/faa.gov/files/2022-01/MayJun2009.pdf"
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "text": "固定翼逆風起飛時，同一地面速度下的相對氣流較強，有利建立升力與控制面作用；「減少操縱性」不是題目所指的優點。",
+    "sources": [
+      {
+        "title": "FAA：風向對起飛距離的影響",
+        "url": "https://www.faa.gov/sites/faa.gov/files/2022-01/MayJun2009.pdf"
+      }
+    ]
+  },
+  {
+    "id": 283,
+    "text": "山壁、峽谷與崎嶇地形會阻擋、轉折或加速風，容易形成渦流與機械亂流，通常比平坦開闊地更複雜。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：亂流的成因",
+        "url": "https://www.weather.gov/zme/safety_turb"
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "text": "風速越強，地形障礙造成的擾動通常越明顯；山區背風面可能出現分離氣流、下沉氣流及渦旋。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：亂流的成因",
+        "url": "https://www.weather.gov/zme/safety_turb"
+      }
+    ]
+  },
+  {
+    "id": 285,
+    "text": "起降時距地高度低，突發風切造成的空速與升力變化較缺乏恢復空間，所以低空風切特別危險。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：地形與低空風切",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/winds/Wx_Terms/Flight_Environment.htm"
+      }
+    ]
+  },
+  {
+    "id": 286,
+    "text": "風切可立即改變相對氣流、升力、姿態與飛行路徑；機體既定的最大載重限制不會因瞬間風向變化而改寫。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：地形與低空風切",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/winds/Wx_Terms/Flight_Environment.htm"
+      }
+    ]
+  },
+  {
+    "id": 287,
+    "text": "題庫以鋒面交界風向、風速差異較明顯的概念選 B；鋒面兩側的氣流差異確實可能形成風切。",
+    "sources": [
+      {
+        "title": "中央氣象署：梅雨鋒面、季風與風切指標",
+        "url": "https://climate.cwa.gov.tw/SeasonalClimate?subpage=PlumRain"
+      }
+    ],
+    "note": "不能把「西南季風風切較溫和」當成通則。西南季風搭配鋒面、低層噴流或雷雨時也可能有強風切；本題只保留原題庫的比較答案。"
+  },
+  {
+    "id": 288,
+    "text": "風會改變無人機的地面軌跡與漂移量，操作人須依風場修正控制，才能維持預定方向與位置。",
+    "sources": [
+      {
+        "title": "NOAA：風的形成與高低氣壓",
+        "url": "https://www.noaa.gov/jetstream/synoptic/origin-of-wind"
+      }
+    ]
+  },
+  {
+    "id": 289,
+    "text": "平流霧主要由暖濕空氣水平移過較冷表面而冷卻形成；雷雨、冰雹與下爆氣流則涉及明顯的垂直氣流。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：平流霧",
+        "url": "https://www.weather.gov/safety/fog-advection"
+      }
+    ]
+  },
+  {
+    "id": 290,
+    "text": "題庫以垂直運動受到抑制或放大的差異判斷穩定度，因此在選項中選「空氣流動方向」。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：垂直溫度遞減率與大氣穩定度",
+        "url": "https://www.weather.gov/btv/profileLapseRate"
+      }
+    ],
+    "note": "科學上穩定度主要由環境垂直溫度遞減率與空氣塊的乾／濕絕熱遞減率比較，水氣也會影響；單憑流動方向不能完整判定。"
+  },
+  {
+    "id": 291,
+    "text": "氣團是一大團在水平方向具有相近溫度與濕度的空氣，通常在廣大且性質相近的來源區停留後形成。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣團定義",
+        "url": "https://forecast.weather.gov/glossary.php?word=air+mass"
+      }
+    ]
+  },
+  {
+    "id": 292,
+    "text": "新加坡接近赤道，全年暖濕；日照加熱地表與海風輻合，常促成午後及傍晚的對流雷雨。",
+    "sources": [
+      {
+        "title": "新加坡氣象署：新加坡氣候與午後雷雨",
+        "url": "https://www.weather.gov.sg/climate-climate-of-singapore/"
+      }
+    ]
+  },
+  {
+    "id": 293,
+    "text": "給定溫度下有一定的飽和水氣壓，水氣增加至飽和後便可能凝結；題庫以「可容納水氣量」表達此概念。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：露點與相對濕度",
+        "url": "https://www.weather.gov/arx/why_dewpoint_vs_humidity"
+      }
+    ]
+  },
+  {
+    "id": 294,
+    "text": "達到飽和時，實際水氣量等於該溫度下的飽和值，相對濕度為 100%；用比例表示就是 1。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：露點與相對濕度",
+        "url": "https://www.weather.gov/arx/why_dewpoint_vs_humidity"
+      }
+    ]
+  },
+  {
+    "id": 295,
+    "text": "飽和水氣壓隨溫度升高而增加，因此暖空氣達飽和前通常可有較多水氣，冷卻則較易達到飽和。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：露點與相對濕度",
+        "url": "https://www.weather.gov/arx/why_dewpoint_vs_humidity"
+      }
+    ]
+  },
+  {
+    "id": 296,
+    "text": "飽和空氣繼續冷卻可使水氣凝結為雲霧的小水滴，水滴長大後可能形成降雨；風主要由氣壓差與其他動力因素形成。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雲與降水的形成",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/clouds/cloud_development/clouds.htm"
+      }
+    ]
+  },
+  {
+    "id": 297,
+    "text": "相對濕度比較的是實際水氣與同一溫度下的飽和水氣，並以百分比表示；不是單位體積內的水氣質量。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：相對濕度與露點的定義",
+        "url": "https://www.weather.gov/mfl/analysisinfo"
+      }
+    ]
+  },
+  {
+    "id": 298,
+    "text": "在相同氣壓與溫度下，較輕的水蒸氣取代部分乾空氣分子，會降低空氣密度，因此濕空氣通常較不利飛行性能。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：密度高度與飛行性能",
+        "url": "https://www.weather.gov/zse/HighDensityAltitude"
+      }
+    ]
+  },
+  {
+    "id": 299,
+    "text": "露點是空氣在一定氣壓、水氣量下冷卻到飽和的溫度；氣溫等於露點時，相對濕度約為 100%。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：露點與相對濕度",
+        "url": "https://www.weather.gov/arx/why_dewpoint_vs_humidity"
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "text": "雷暴除了水氣，還需要足夠不穩定度、抬升與強對流等條件，不能僅因水氣飽和就判定會有雷暴。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雷雨胞的生命週期",
+        "url": "https://www.weather.gov/spotterguide/life"
+      }
+    ],
+    "note": "題庫的「雷爆」應理解為雷暴。飽和本身也不保證立即降雨，仍需水滴或冰晶成長。"
+  },
+  {
+    "id": 301,
+    "text": "霧通常依形成機制分類，例如暖濕平流、地面輻射冷卻、蒸發增濕或鋒面降水；「高空霧」不是這裡的常用分類。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：霧的類型與成因",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/fog_stuff/fog_definitions/Fog_definitions.html"
+      }
+    ]
+  },
+  {
+    "id": 302,
+    "text": "平流霧由持續移入的暖濕空氣與冷表面作用維持，可能延續數日，日出後不一定迅速消散。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：平流霧",
+        "url": "https://www.weather.gov/safety/fog-advection"
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "text": "風向改變可中斷原本暖濕空氣的輸送，削弱平流霧持續形成的條件，因此是題庫選 B 的理由。",
+    "sources": [
+      {
+        "title": "飛航服務總臺：霧的形成與消散",
+        "url": "https://www.anws.gov.tw/FileDownLoad/FileUpload/f862bf45ac5e3bc1b75a7df88378c7d5.pdf"
+      }
+    ],
+    "note": "本題並非完全互斥：足夠升溫也可能使霧滴蒸發。因此不能將選項 C 解讀為任何情況都無助消散；原答案 B 保留。"
+  },
+  {
+    "id": 304,
+    "text": "輻射霧常在晴朗、風弱的夜晚由地表冷卻形成，日照加熱後通常較易消散；平流霧則可能因持續輸送維持較久。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：輻射霧",
+        "url": "https://www.weather.gov/safety/fog-radiation"
+      }
+    ]
+  },
+  {
+    "id": 305,
+    "text": "冷空氣流過較暖水面，水面蒸發使近水面空氣增濕，混合後達到飽和，會出現像蒸氣般的薄霧。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：霧的類型與成因",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/fog_stuff/fog_definitions/Fog_definitions.html"
+      }
+    ]
+  },
+  {
+    "id": 306,
+    "text": "秋冬空氣轉冷時，湖水或海水可能仍較暖，較易形成冷空氣與暖水面間的溫差，促成蒸氣霧。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：霧的類型與成因",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/fog_stuff/fog_definitions/Fog_definitions.html"
+      }
+    ]
+  },
+  {
+    "id": 307,
+    "text": "鋒面霧常由暖雨落入近地面較冷空氣，雨滴蒸發增濕並使空氣達到飽和而形成。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：霧的形成與鋒面霧",
+        "url": "https://www.weather.gov/lmk/fog_tutorial?height=100%25&iframe=true&width=100%25"
+      }
+    ],
+    "note": "題幹把成因寫成「空氣自高空往下移動」，不夠精確；典型機制是降水進入冷空氣後蒸發、增濕，原答案 A 保留。"
+  },
+  {
+    "id": 308,
+    "text": "鋒面霧的典型形成環境是鋒面附近，尤其暖鋒的降水落入地面冷空氣時，因此與鋒面直接相關。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：霧的形成與鋒面霧",
+        "url": "https://www.weather.gov/lmk/fog_tutorial?height=100%25&iframe=true&width=100%25"
+      }
+    ]
+  },
+  {
+    "id": 309,
+    "text": "暖濕空氣先經平流到冷區，再受到地表夜間輻射冷卻，兩種過程可以一起促成霧，稱平流輻射霧。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：平流霧",
+        "url": "https://www.weather.gov/safety/fog-advection"
+      },
+      {
+        "title": "NOAA／NWS：輻射霧",
+        "url": "https://www.weather.gov/safety/fog-radiation"
+      }
+    ]
+  },
+  {
+    "id": 310,
+    "text": "表面冷卻至露點附近時，接觸表面的水氣凝結成液態水滴就是露；懸浮於空氣中的小水滴才是霧或雲。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：露與霜的形成",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/fog_stuff/Dew_Frost/Dew_Frost.htm"
+      }
+    ]
+  },
+  {
+    "id": 311,
+    "text": "霜或凍結水滴會使翼面粗糙、改變流經翼面的氣流，降低升力並增加阻力，所以可能危害飛行安全。",
+    "sources": [
+      {
+        "title": "FAA《航空氣象手冊》：霜與積冰對升阻力的影響",
+        "url": "https://www.faa.gov/sites/faa.gov/files/FAA-H-8083-28A_FAA_Web.pdf"
+      }
+    ],
+    "note": "嚴格說，霜通常指水氣直接凝華成冰晶；露珠先凝結後再結冰屬凍露。兩者都應在起飛前清除。"
+  },
+  {
+    "id": 312,
+    "text": "翼面覆霜會破壞原本的光滑外形，增加阻力並降低升力與性能，因此不會提高飛航效率。",
+    "sources": [
+      {
+        "title": "FAA《航空氣象手冊》：霜與積冰對升阻力的影響",
+        "url": "https://www.faa.gov/sites/faa.gov/files/FAA-H-8083-28A_FAA_Web.pdf"
+      }
+    ]
+  },
+  {
+    "id": 313,
+    "text": "寒冷清晨的機體表面可能結霜，起飛前應檢查並依機型允許的方法完全清除，避免污染翼面或螺旋槳。",
+    "sources": [
+      {
+        "title": "FAA：起飛前清除霜、雪與冰",
+        "url": "https://www.faa.gov/sites/faa.gov/files/2022-01/NovDec2014.pdf"
+      }
+    ]
+  },
+  {
+    "id": 314,
+    "text": "積狀表示塊狀或隆起外觀，層狀表示較均勻的片層，卷狀常呈纖細冰晶絲；三者都是常見的雲外觀類型。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雲的形狀與高度分類",
+        "url": "https://www.weather.gov/lmk/cloud_classification"
+      }
+    ]
+  },
+  {
+    "id": 315,
+    "text": "以雲底大致高度可區分高、中、低雲族；另有積雲與積雨雲等垂直發展類型，可能橫跨多個高度層。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：高雲、中雲、低雲與垂直發展雲",
+        "url": "https://www.weather.gov/jkl/education"
+      }
+    ]
+  },
+  {
+    "id": 316,
+    "text": "卷雲、卷層雲及卷積雲屬典型高雲，常由冰晶構成；題庫採約 6,000 公尺以上作為記憶界線。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：高雲、中雲、低雲與垂直發展雲",
+        "url": "https://www.weather.gov/jkl/education"
+      }
+    ]
+  },
+  {
+    "id": 317,
+    "text": "高積雲、高層雲是典型中雲；雨層雲也常在中雲分類中列出，但其雲底可向下降至低雲高度。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雲與降水的形成",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/clouds/cloud_development/clouds.htm"
+      }
+    ]
+  },
+  {
+    "id": 318,
+    "text": "層雲、層積雲具有低雲底，積雲也常從低空開始形成；要分清雲底低與雲頂可向上發展是不同概念。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：高雲、中雲、低雲與垂直發展雲",
+        "url": "https://www.weather.gov/jkl/education"
+      }
+    ]
+  },
+  {
+    "id": 319,
+    "text": "氣團可依來源緯度與陸地／海洋區分冷暖、乾濕性質；移動後還可依其相對所經表面的溫度區分冷型或暖型。",
+    "sources": [
+      {
+        "title": "NOAA：氣團來源與分類",
+        "url": "https://www.noaa.gov/jetstream/synoptic/air-masses"
+      }
+    ],
+    "note": "選項 C 的「所經地面為冷空氣或暖空氣」用語不精確，應理解為氣團相對於下方地表較冷或較暖。"
+  },
+  {
+    "id": 320,
+    "text": "題目以相對溫度分類：相對周圍空氣較冷的氣團稱冷氣團；不是指溫度一定低於 0°C。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣團定義",
+        "url": "https://forecast.weather.gov/glossary.php?word=air+mass"
+      }
+    ]
+  },
+  {
+    "id": 321,
+    "text": "穩定空氣抑制垂直對流，不穩定空氣則較利於垂直發展的雲雨，因此氣團穩定度會影響天氣型態。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：垂直溫度遞減率與大氣穩定度",
+        "url": "https://www.weather.gov/btv/profileLapseRate"
+      }
+    ]
+  },
+  {
+    "id": 322,
+    "text": "鋒面是不同氣團的交界，兩側常有溫度、濕度與風場差異，並伴隨不同的雲雨天氣。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓系統與鋒面",
+        "url": "https://www.weather.gov/lmk/basic-fronts"
+      }
+    ]
+  },
+  {
+    "id": 323,
+    "text": "冷氣團向前推進並取代原有暖空氣時，交界稱冷鋒；較重的冷空氣會迫使暖空氣抬升。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓系統與鋒面",
+        "url": "https://www.weather.gov/lmk/basic-fronts"
+      }
+    ]
+  },
+  {
+    "id": 324,
+    "text": "當兩側氣團都沒有明顯推進、交界移動緩慢時，稱滯留鋒；它可能讓同一區域持續受雲雨影響。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓系統與鋒面",
+        "url": "https://www.weather.gov/lmk/basic-fronts"
+      }
+    ]
+  },
+  {
+    "id": 325,
+    "text": "鋒面兩側空氣性質不同，飛過交界時可能遇到溫濕度與風向的明顯變化，還須注意雲雨與風切。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：氣壓系統與鋒面",
+        "url": "https://www.weather.gov/lmk/basic-fronts"
+      }
+    ]
+  },
+  {
+    "id": 326,
+    "text": "相較背風面容易出現的渦流與下沉氣流，迎風面氣流通常較連續，因此題庫選迎風面。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：山區背風面亂流",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/turbulence_stuff/turbulence/turbulence.htm?lv=true"
+      }
+    ],
+    "note": "這只是相對比較，並不代表強風中的迎風面安全；應依機型風速限制與現場條件決定是否飛行。"
+  },
+  {
+    "id": 327,
+    "text": "強風越過山頂後，背風側可能產生下沉氣流、波動與轉子亂流，因此越過山巔要特別留意背風面。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：山區背風面亂流",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/turbulence_stuff/turbulence/turbulence.htm?lv=true"
+      }
+    ]
+  },
+  {
+    "id": 328,
+    "text": "過冷水滴撞擊低溫表面時可凍結，翼面、尾翼與外露感測器都可能積冰，後者還可能造成讀值異常。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：航空積冰",
+        "url": "https://www.weather.gov/zme/safety_ice"
+      }
+    ]
+  },
+  {
+    "id": 329,
+    "text": "典型機體積冰風險與低於或接近冰點的機體表面、以及過冷液態水滴等水氣條件共同有關。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：積冰的條件與危害",
+        "url": "https://www.weather.gov/source/zhu/ZHU_Training_Page/icing_stuff/icing/icing.htm"
+      }
+    ],
+    "note": "選項列的是風險條件，不代表任一項單獨成立就必然積冰；只有低溫而沒有可凍結水分時，不能直接推定會積冰。"
+  },
+  {
+    "id": 330,
+    "text": "積冰會增加重量與阻力、降低升力，還可能干擾感測器或控制面，造成飛行性能劣化或操作人誤判。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：航空積冰",
+        "url": "https://www.weather.gov/zme/safety_ice"
+      }
+    ]
+  },
+  {
+    "id": 331,
+    "text": "典型單一雷雨胞的發展分為發展、成熟、消散三期；「重疊期」不是標準的生命週期階段。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雷雨胞的生命週期",
+        "url": "https://www.weather.gov/spotterguide/life"
+      }
+    ]
+  },
+  {
+    "id": 332,
+    "text": "成熟期開始有降水與下沉氣流，同時上升氣流仍可能存在，雷電與強陣風等危害也較顯著。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雷雨胞的生命週期",
+        "url": "https://www.weather.gov/spotterguide/life"
+      }
+    ]
+  },
+  {
+    "id": 333,
+    "text": "消散期以下沉氣流占優勢，暖濕氣流的供給減弱，降雨與雲胞逐漸衰退；殘留陣風仍可能存在。",
+    "sources": [
+      {
+        "title": "NOAA／NWS：雷雨胞的生命週期",
+        "url": "https://www.weather.gov/spotterguide/life"
+      }
+    ]
+  },
+  {
+    "id": 334,
+    "text": "臺北航空氣象中心是交通部民用航空局飛航服務總臺的業務單位，負責航空氣象觀測、預報等任務。",
+    "sources": [
+      {
+        "title": "飛航服務總臺：臺北航空氣象中心組織與任務",
+        "url": "https://www.anws.gov.tw/AboutUs/org/org10.htm"
+      }
+    ]
+  },
+  {
+    "id": 335,
+    "text": "中央氣象署網站提供天氣觀測、預報與衛星雲圖等資料，三項都可用於操作前的天氣評估。",
+    "sources": [
+      {
+        "title": "交通部中央氣象署：觀測、預報與衛星圖資",
+        "url": "https://www.cwa.gov.tw/V8/C/"
+      }
+    ],
+    "note": "題庫使用舊機關名稱「中央氣象局」；目前為「交通部中央氣象署」，功能判斷仍相同。"
+  },
+  {
+    "id": 336,
+    "text": "AOAWS 提供全球主要機場的航空天氣觀測報告，操作人可查詢 METAR 等即時機場資料，因此原答案選 A。",
+    "sources": [
+      {
+        "title": "飛航服務總臺：航空氣象服務網 AOAWS",
+        "url": "https://aoaws.anws.gov.tw/"
+      }
+    ],
+    "note": "現行 AOAWS 也提供衛星、雷達、航空預報等多種服務，不能由此單選題推論網站只有 A；資料種類與時效應依現行網站查詢。"
+  },
+  {
+    "id": 337,
+    "text": "航空氣象報文以標準代碼呈現風、能見度、雲底與天氣，具備基本判讀能力才便於辨識飛行相關氣象風險。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "text": "報文時間組後的 Z 表示世界協調時間 UTC；臺灣時間為 UTC 加 8 小時，讀報文時要完成時區換算。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 339,
+    "text": "臺灣與常見國際 METAR 的能見度組以四位數、公尺編報，例如 5000 表示 5,000 公尺。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ],
+    "note": "這是臺灣／國際常用編法；美國 METAR 常見以 SM 表示法定英里，閱讀海外報文須先確認單位。"
+  },
+  {
+    "id": 340,
+    "text": "天空分成八等份，遮蓋 1～2 份的雲量為稀雲 FEW；它描述的是遮蔽比例，不是雲底高度。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 341,
+    "text": "遮蓋 3～4 個八分量時為疏雲 SCT；即使同層有分散雲塊，仍以該層總遮蔽份數分類。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 342,
+    "text": "遮蓋 5～7 個八分量時為裂雲 BKN，天空仍有部分空隙；航空雲冪常以 BKN 或 OVC 的最低雲底判斷。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 343,
+    "text": "全部八份天空被該層雲遮蔽時為密雲 OVC，即滿天覆蓋；它與看不見天空的垂直能見度報法不同。",
+    "sources": [
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ]
+  },
+  {
+    "id": 344,
+    "text": "METAR 雲底通常以百英呎編碼，例如 FEW012 的雲底為離地約 1,200 呎，不能直接把 012 當公尺。",
+    "sources": [
+      {
+        "title": "FAA《遙控無人機操作人學習指南》：METAR 雲底高度（第 17 頁）",
+        "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf#page=25"
+      }
+    ]
+  },
+  {
+    "id": 345,
+    "text": "METAR 整份觀測報會包含風向風速、能見度、現在天氣與雲組，因此題庫以完整報文內容選 D。",
+    "sources": [
+      {
+        "title": "飛航服務總臺：航空氣象服務網 AOAWS",
+        "url": "https://aoaws.anws.gov.tw/"
+      },
+      {
+        "title": "臺北航空氣象中心《航空氣象電碼彙編》",
+        "url": "https://aoaws.anws.gov.tw/data/tamc/DownloadFiles/code.pdf"
+      }
+    ],
+    "note": "「盛行天氣現象」若嚴格指現在天氣組，並不包含風和雲的所有欄位；此題用語較寬泛，應依「整份觀測報」理解。"
+  }
+]

@@ -175,3 +175,27 @@ progress::-moz-progress-bar { background: var(--green); }
   .chapter-statistics .review-filters button { flex: 1 1 150px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+.explanation { margin-top: 16px; border: 1px solid #c4d2c4; border-radius: 10px; background: #f8faf6; }
+.explanation summary { cursor: pointer; padding: 12px 16px; min-height: 44px; color: var(--green); font-weight: 650; }
+.explanation summary:focus-visible { outline: 3px solid #b57712; outline-offset: 3px; border-radius: 8px; }
+.explanation-body { padding: 0 16px 16px; font-size: 14px; line-height: 1.8; }
+.explanation-body p { margin: 8px 0; }
+.explanation-note { background: #fff3d9; color: #70430f; padding: 12px; border-radius: 8px; }
+.explanation-body .source-label { font-size: 12px; font-weight: 700; }
+.explanation-sources, .markdown-content .explanation-sources { list-style: disc; padding-left: 20px; margin: 4px 0 0; }
+.explanation-sources li, .markdown-content .explanation-sources li { padding: 0; }
+.explanation-sources a { display: inline-block; padding: 8px 0; overflow-wrap: anywhere; }
+.navigator.large-exam #question-nav { position: relative; max-height: 260px; overflow-y: auto; padding: 6px; margin: -6px; scrollbar-gutter: stable; }
+.practice-panel fieldset { margin: 0; }
+.practice-panel legend { font-size: 14px; font-weight: 650; margin-bottom: 8px; }
+.brand-nav { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.brand-nav .header-link { margin-left: 0; }
+.brand-nav button[aria-current="page"] { background: var(--green); color: white; border-color: var(--green); }
+.resume-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; background: #fff5df; border: 1px solid #d8bb7c; border-radius: 12px; margin-bottom: 24px; }
+.resume-panel button { flex-shrink: 0; }
+.resume-panel .hint { margin-top: 4px; }
+@media (max-width: 600px) {
+  .brand:has(.brand-nav) { flex-wrap: wrap; }
+  .brand-nav { width: 100%; justify-content: flex-end; }
+  .resume-panel { flex-direction: column; align-items: stretch; }
+}

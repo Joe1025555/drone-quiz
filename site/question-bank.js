@@ -62,6 +62,10 @@
     }
   }
   content.replaceChildren(fragment);
+  // Question IDs follow the same chapter/question order as the source Markdown.
+  for (const [index, node] of [...content.querySelectorAll('.bank-question')].entries()) {
+    node.append(window.Explanations.createDetails(index + 1));
+  }
   const query = document.getElementById('bank-query');
   const chapterFilter = document.getElementById('bank-chapter');
   const questionNodes = [...content.querySelectorAll('.bank-question')];
