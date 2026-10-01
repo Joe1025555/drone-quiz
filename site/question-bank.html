@@ -10,16 +10,20 @@
   <script defer src="question-bank.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
   <header class="brand"><span class="brand-icon" aria-hidden="true">✦</span><div>無人機普通操作證<small>完整題庫</small></div><a class="header-link" href="index.html">前往測驗 →</a></header>
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="card bank-intro">
       <span class="eyebrow">題目、選項與答案</span>
       <h1>完整題庫</h1>
       <p class="muted">閱讀整理好的 388 題，正確選項以 ✅ 標示。</p>
+      <div class="bank-search"><div><label for="bank-query">搜尋題目與選項</label><input id="bank-query" type="search" placeholder="例如：高度、電池、風速" aria-describedby="search-help"></div><div><label for="bank-chapter">章節</label><select id="bank-chapter"><option value="">全部章節</option></select></div><button id="clear-search" class="secondary">清除篩選</button></div>
+      <p id="search-help" class="hint">可用空格分隔多個關鍵字，搜尋題目、選項與答案。</p><p id="search-count" class="hint" role="status"></p>
       <nav id="chapter-links" class="chapter-links" aria-label="跳至章節"></nav>
       <a href="question-bank.md" download="普通操作證學科測驗題庫_題目選項答案.md">下載 Markdown 原檔 ↓</a>
     </section>
     <article id="markdown-content" class="card markdown-content" aria-label="Markdown 題庫內容"></article>
+    <p id="search-empty" class="card" hidden>找不到符合的題目。請試試其他關鍵字，或清除篩選。</p>
     <noscript><p class="card">請啟用 JavaScript，或<a href="question-bank.md">開啟 Markdown 原檔</a>。</p></noscript>
     <a class="back-top" href="#">回到頂部 ↑</a>
   </main>

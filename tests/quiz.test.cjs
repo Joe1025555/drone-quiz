@@ -55,3 +55,13 @@ test('deadline stays at 30 minutes and expires even after a delayed tick', () =>
   assert.equal(quiz.remaining(deadline, deadline), 0);
   assert.equal(quiz.remaining(deadline, deadline + 60000), 0);
 });
+test('practice handles small mistake banks and caps large banks at 20', () => {
+  const small = bank.slice(0, 3);
+  const selected = quiz.practice(small);
+  assert.equal(selected.length, 3);
+  assert.equal(new Set(selected.map(q => q.id)).size, 3);
+  assert.ok(selected.every(q => small.includes(q)));
+  assert.equal(quiz.grade(selected, selected.map(q => q.answer)).score, 15);
+  assert.equal(quiz.practice(bank).length, 20);
+  assert.equal(quiz.practice([]).length, 0);
+});

@@ -17,6 +17,8 @@ frame.addEventListener('load', () => {
     const get = id => d.getElementById(id);
     const key = 'drone-quiz-1150202-v1';
     if (phase === 0) {
+      frame.style.width = '320px';
+      check(d.documentElement.scrollWidth <= 320, 'Welcome layout fits 320px viewport');
       for (let attempt = 0; attempt < 100; attempt++) {
         const selected = w.Quiz.sample(w.QUESTION_BANK);
         const chapters = Array.from(new Set(w.QUESTION_BANK.map(q => q.chapter)));
@@ -27,6 +29,7 @@ frame.addEventListener('load', () => {
       get('start').click();
       check(!get('exam').hidden && get('question-nav').children.length === 20, 'Start: 20 navigation buttons');
       check(get('timer').textContent === '30:00', 'Timer starts at 30:00');
+      check(d.documentElement.scrollWidth <= 320, 'Exam layout fits 320px viewport');
       const state = JSON.parse(w.localStorage.getItem(key));
       check(new Set(state.ids).size === 20, '20 unique questions');
       get('options').querySelector('input[value="A"]').click();
@@ -36,10 +39,15 @@ frame.addEventListener('load', () => {
       get('options').querySelector('input[value="B"]').click();
       check(JSON.parse(w.localStorage.getItem(key)).answers[0] === 'B', 'Answer can be changed');
       check(!get('options').textContent.includes('正確') && !get('options').textContent.includes('✅'), 'No answers revealed during exam');
+      get('flag-question').click();
+      check(get('flag-question').getAttribute('aria-pressed') === 'true' && get('question-nav').children[0].textContent.includes('☆'), 'Flag is visible in question navigation');
       phase = 1;
       w.location.reload();
     } else if (phase === 1) {
       check(get('options').querySelector('input[value="B"]').checked, 'Reload restores answer');
+      check(get('flag-question').getAttribute('aria-pressed') === 'true', 'Reload restores pending flag');
+      get('next').click(); get('next-flagged').click();
+      check(JSON.parse(w.localStorage.getItem(key)).current === 0, 'Jump returns to flagged question');
       get('submit').click();
       check(get('submit-dialog').open && get('submit-message').textContent.includes('19'), 'Submission warns about 19 unanswered questions');
       get('cancel-submit').click();
@@ -55,8 +63,15 @@ frame.addEventListener('load', () => {
       get('submit').click(); get('confirm-submit').click();
       check(!get('results').hidden && get('exam').hidden, 'Submission switches to one-page results');
       check(get('score').textContent === '50', '10 correct answers score 50');
+      check(d.documentElement.scrollWidth <= 320, 'Result layout fits 320px viewport');
       check(get('result-stats').textContent.includes('答錯 5 題') && get('result-stats').textContent.includes('未作答 5 題'), 'Mixed incorrect and unanswered totals');
       check(get('review-list').children.length === 20 && d.querySelectorAll('.right-answer').length === 20, 'All 20 questions show correct answers');
+      check(get('chapter-stats').children.length === 4, 'Result lists four chapter accuracy bars');
+      get('review-wrong').click();
+      check([...get('review-list').children].filter(card => !card.hidden).length === 10, 'Wrong-only filter includes unanswered questions');
+      get('review-all').click();
+      check([...get('review-list').children].every(card => !card.hidden), 'All filter restores 20 reviews');
+      check(JSON.parse(w.localStorage.getItem('drone-quiz-mistakes-1150202')).length >= 10, 'Wrong questions persist in mistake bank');
       get('restart').click();
       check(!get('exam').hidden && get('progress').textContent.includes('0 / 20'), 'Restart clears answers');
       const started = JSON.parse(w.localStorage.getItem(key));
@@ -73,9 +88,49 @@ frame.addEventListener('load', () => {
       w.localStorage.setItem(key, JSON.stringify(expired));
       phase = 2;
       w.location.reload();
-    } else {
+    } else if (phase === 2) {
       check(!get('results').hidden && get('finish-reason').textContent.includes('自動交卷'), 'Expired persisted exam submits on reopening');
+      get('practice-home').click();
+      get('practice-chapter').selectedIndex = 2;
+      get('start-chapter').click();
+      const chapterState = JSON.parse(w.localStorage.getItem(key));
+      check(chapterState.ids.length === 20 && chapterState.ids.every(id => w.QUESTION_BANK.find(q => q.id === id).chapter === get('practice-chapter').value), 'Chapter practice draws 20 questions only from chosen chapter');
+      check(get('exam-mode').textContent === '章節練習', 'Mode label distinguishes chapter practice');
+      const ids = w.QUESTION_BANK.slice(0, 3).map(q => q.id);
+      w.localStorage.setItem('drone-quiz-mistakes-1150202', JSON.stringify(ids));
       w.localStorage.removeItem(key);
+      phase = 3; w.location.reload();
+    } else if (phase === 3) {
+      check(get('start-mistakes').textContent.includes('3 題'), 'Mistake count restored from storage');
+      get('start-mistakes').click();
+      const short = JSON.parse(w.localStorage.getItem(key));
+      check(short.ids.length === 3 && get('question-nav').children.length === 3, 'Small mistake bank produces three-question practice');
+      for (let i = 0; i < 3; i++) {
+        get('question-nav').children[i].click();
+        const answer = w.QUESTION_BANK.find(q => q.id === short.ids[i]).answer;
+        get('options').querySelector(`input[value="${answer}"]`).click();
+      }
+      check(get('next').textContent.includes('交卷'), 'Short practice final question offers submission');
+      get('next').click(); get('confirm-submit').click();
+      check(get('score').textContent === '15' && get('score').nextElementSibling.textContent.includes('15'), 'Short practice maximum is 15 points');
+      check(JSON.parse(w.localStorage.getItem('drone-quiz-mistakes-1150202')).length === 0 && get('result-mistakes').disabled, 'Correct retry removes mistakes and disables empty practice');
+      get('review-wrong').click(); check(!get('review-empty').hidden, 'All-correct result has clear empty state');
+      w.localStorage.removeItem(key); w.localStorage.removeItem('drone-quiz-mistakes-1150202');
+      phase = 4; frame.src = '../site/question-bank.html';
+    } else {
+      check(d.querySelectorAll('.bank-question').length === 388, 'Search page retains all 388 Markdown questions');
+      get('bank-query').value = '電池'; get('bank-query').dispatchEvent(new w.Event('input'));
+      const matches = [...d.querySelectorAll('.bank-question')].filter(q => !q.hidden);
+      check(matches.length > 0 && matches.length < 388 && matches.every(q => q.textContent.includes('電池')), 'Keyword search filters question content');
+      get('bank-query').value = '不會出現的搜尋字串123'; get('bank-query').dispatchEvent(new w.Event('input'));
+      check(!get('search-empty').hidden, 'Search provides no-match feedback');
+      get('clear-search').click();
+      get('bank-chapter').selectedIndex = 3; get('bank-chapter').dispatchEvent(new w.Event('change'));
+      check([...d.querySelectorAll('.bank-question')].filter(q => !q.hidden).length === 82, 'Chapter search filter selects 82 meteorology questions');
+      get('clear-search').click();
+      check([...d.querySelectorAll('.bank-question')].every(q => !q.hidden), 'Clear filter restores all questions');
+      frame.style.width = '320px';
+      check(d.documentElement.scrollWidth <= 320, 'Question bank layout fits 320px viewport');
       output.textContent = 'PASS ' + passed.length + ' checks\n' + passed.join('\n');
     }
   } catch (error) { output.textContent = 'FAIL: ' + error.stack + '\n' + passed.join('\n'); }

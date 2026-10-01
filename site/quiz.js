@@ -45,7 +45,10 @@
     });
     return { score: correct * POINTS, correct, unanswered, wrong: questions.length - correct - unanswered, items };
   }
-  const api = { COUNT, POINTS, DURATION, sample, remaining, grade };
+  function practice(bank, random = Math.random) {
+    return shuffle(bank, random).slice(0, COUNT);
+  }
+  const api = { COUNT, POINTS, DURATION, sample, practice, remaining, grade };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Quiz = api;
 })(typeof window !== 'undefined' ? window : globalThis);
