@@ -17,6 +17,13 @@ frame.addEventListener('load', () => {
     const get = id => d.getElementById(id);
     const key = 'drone-quiz-1150202-v1';
     if (phase === 0) {
+      for (let attempt = 0; attempt < 100; attempt++) {
+        const selected = w.Quiz.sample(w.QUESTION_BANK);
+        const chapters = Array.from(new Set(w.QUESTION_BANK.map(q => q.chapter)));
+        const counts = chapters.map(chapter => selected.filter(q => q.chapter === chapter).length);
+        if (counts.join(',') !== '5,9,4,2' || new Set(selected.map(q => q.id)).size !== 20) throw new Error('Chapter proportions or uniqueness failed');
+      }
+      check(true, '100 draws keep chapter proportions 5/9/4/2 with no duplicates');
       get('start').click();
       check(!get('exam').hidden && get('question-nav').children.length === 20, 'Start: 20 navigation buttons');
       check(get('timer').textContent === '30:00', 'Timer starts at 30:00');

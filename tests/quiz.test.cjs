@@ -25,8 +25,16 @@ test('sampling returns 20 unique source questions without changing the bank', ()
     assert.equal(selected.length, 20);
     assert.equal(new Set(selected.map(q => q.id)).size, 20);
     assert.ok(selected.every(q => bank.includes(q)));
+    const chapters = Array.from(new Set(bank.map(q => q.chapter)));
+    assert.deepEqual(chapters.map(chapter => selected.filter(q => q.chapter === chapter).length), [5, 9, 4, 2]);
   }
   assert.equal(JSON.stringify(bank), before);
+});
+test('chapter allocation is independent of question ordering', () => {
+  const selected = quiz.sample(bank.slice().reverse());
+  for (const [chapter, expected] of [['第一章 民用航空法及相關法規', 5], ['第二章 基礎飛行原理', 9], ['第三章 氣象', 4], ['第四章 緊急處置與飛行決策', 2]]) {
+    assert.equal(selected.filter(q => q.chapter === chapter).length, expected);
+  }
 });
 test('scores award five points only for correct answers', () => {
   const selected = quiz.sample(bank);
